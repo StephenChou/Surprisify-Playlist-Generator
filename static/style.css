@@ -1,0 +1,851 @@
+	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+
+	}
+
+	body {
+		background-image: url(/static/background7.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
+		display: block;
+		max-width: 100%;
+		height: 100%;
+		scroll-behavior: smooth;
+		overflow-x: hidden;
+
+	}
+
+	
+
+	@keyframes fadein {
+		/*from {
+			opacity: 0;
+			-webkit-transform: translate3d(0, 100%, 0);
+			transform: translate3d(0, 100%, 0);
+		}
+
+		to {
+			opacity: 1;
+			-webkit-transform: none;
+			transform: none;
+		}*/
+
+		0% { opacity:0; }
+    	66% { opacity:0; }
+    	100% { opacity:1; }
+
+	}
+
+	.logo {
+		margin: 0px auto 0px 30px;
+		
+		opacity: 0;
+		animation-delay: 1s;
+		animation-name: fadein;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+		shape-rendering: crispEdges;
+
+	}
+
+	.navbar h1 {
+		font-family: Source Sans Pro;
+		color: white;
+		font-size: 2rem;
+
+	
+
+
+	}
+
+
+	.header-subtext {
+		color: white;
+		font-family: Montserrat;
+		font-size: 12px;
+		text-align: left;
+		position: relative;
+		bottom: 5px;
+		left: 100px;
+		width:120px;
+
+		opacity: 0;
+		animation-delay: 1s;
+		animation-name: fadein;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+
+	}
+
+	header {
+		/*background-color: #292929;*/
+		position: relative;
+		top: 0;
+		z-index: 9999;
+		width: 100%;
+
+		opacity: 0;
+		animation-delay: 1s;
+		animation-name: fadein;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+ 
+	}
+
+	.navbar {
+
+		text-align: right;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		min-height: 10vh;
+		background-color;
+		
+	}
+
+	.nav-links {
+		margin: 0;
+		padding: 0;
+		display: flex;
+	/*	justify-content: space-around;*/
+		/*width: 30%;	*/
+	}
+
+	.nav-links li {
+		list-style: none;
+		margin: 0 30px;
+		
+	}
+
+	.nav-links li a {
+		font-family: Source Sans Pro;
+		font-weight: 200px;
+		color: white;
+		text-decoration: none;
+		font-size: 1rem;
+		display: block;
+		margin: 10px 0;
+		padding: 10px 20px;
+
+	}
+
+	.nav-links li a:hover {
+		text-decoration: underline;
+		background-color;
+		transition;
+	}
+
+
+	.burger {
+		margin-right: 30px;
+		display: none;
+	}
+
+	.burger div{
+		background-color: white;
+		width: 25px;
+		height: 3px;
+		margin: 5px;
+		border-radius: 2px;
+		transition: all 0.3s ease;
+
+	}
+
+	.middle-container {
+		width: 700px;
+		height: 450px;
+		position: relative;
+		top: 60px;
+		text-align: center;
+		margin: 0 auto;
+		/*border: 1px solid white;*/
+
+	}
+
+	.middle {
+
+		height: 450px;
+		width: auto;
+		text-align: center;
+		top: 0px;
+		z-index: -1;
+		/*border: 1px solid white;*/
+
+	}
+
+
+
+
+
+	.headphones {
+		width: 80px;
+		height: auto;
+		position: relative;
+		top: 50px;
+		right: 270px;
+
+
+		opacity:0;
+		animation-name: fadein;
+		animation-delay: 1s;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+	}
+
+	.phone {
+		width: 80px;
+		height: auto;
+		position: relative;
+		left: 200px;
+		bottom: 280px;
+		/*top: 173px;
+		right: 67px;*/
+
+		opacity:0;
+		animation-name: fadein;
+		animation-delay: 1s;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+	}
+
+	.middle-text {
+		font-family: Source Sans Pro;
+		font-size: 45px;
+		line-height: 0.9;
+		color: white;
+		padding-bottom: 10px;		
+		opacity: 0;
+		animation-name: fadein;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+
+	}
+
+	.middle-subtext {
+		font-family: Montserrat;
+		color: white;
+		text-align: center;
+		/*display: inline-block;*/
+	/*	position: relative;
+		top: 25px;
+		font-size: 20px;*/
+
+		opacity:0;
+		animation-name: fadein;
+		animation-delay: 1s;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+	}
+
+
+/*	.login-button {
+		width: 195px;
+		text-align: center;
+		height: 100px;
+		opacity: 0;
+		border: 1px solid white;
+		animation-name: fadein;
+		animation-delay: 1s;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+	}*/
+
+	.login-button img {
+	/*	width: 200px;
+		height: auto;
+		margin: 0 auto;
+		left: 200px;;
+		position: absolute;
+		top: -45px;*/
+
+		width: 200px;
+		height: auto;
+		position: relative;
+		bottom: 40px;
+
+		opacity: 0;
+		animation-name: fadein;
+		animation-delay: 1s;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+
+	}
+
+	.login-button p {
+		z-index: 999;
+		font-family: Montserrat;
+		text-align: center;
+		position: relative;
+		top: 113px;
+		left: 16px;
+	}
+
+	.login-button a {		
+		text-decoration: none;
+		color: white;
+
+		position: relative;
+		bottom: 40px;
+
+		opacity: 0;
+		animation-name: fadein;
+		animation-delay: 1s;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+
+
+	}
+
+	.login-button a:hover {
+		text-decoration: underline;
+	}
+
+
+	#step-with-border {
+		height: auto;
+	}
+
+	#transition {
+
+		position: absolute;
+	}
+
+	.step-page{
+
+		width: 100%;
+		background-color: #292929;
+		height: auto;
+		position: relative;
+
+
+
+	}
+
+	svg {
+		/*width: 100%;
+		height: auto;*/
+		display: block;
+
+	}
+
+
+
+	.title {
+	/*	padding-top: 70px;*/
+		text-align: center;
+		/*display: flex;*/
+		font-family: Source Sans Pro;
+		color: white;
+		font-size: 3rem;
+		position:relative;
+		top: 60px;
+	}
+
+	#step-container {
+		position: relative;
+/*		top: 100px;*/
+	}
+
+
+
+	.step-page p {
+		
+		font-family: Montserrat;
+		color: white;
+		padding: 20px 20px 20px 20px;
+	}
+
+
+
+	.steps {
+		display: flex;
+		margin: 0;
+		/*border: 1px solid white;*/
+		padding-top: 100px;
+		padding-bottom: 100px;
+
+
+	}
+
+
+	.step {
+
+
+		flex: 1;
+		width: 200px;
+		/*height: 400px;*/
+		height: auto;
+		margin: 20px;
+		text-align: center;
+
+	}
+
+	#step1, #step2 {
+		border-right: 1px solid white;
+		border-bottom;
+	}
+
+	.step h1 {
+		color: white;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-weight: 500;
+		color: white;
+	}
+
+	.step p {
+		font-family: Source Sans Pro;
+		color: white;
+	}
+
+
+	.step img {
+		width: 200px;
+		height: auto;
+		position: relative;
+		top: 80px;
+		left: 90px;
+
+	}
+
+	.box {
+		background-color: #1d1d1d;
+		/*position: absolute;
+		top: 1100px;*/
+		width: 80%;
+		height: 200px;
+		margin: 0 auto;
+		margin-top: 30px;
+		margin-bottom: 10px;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+
+	}
+
+	#step1computer {
+		position: relative;
+		left: 3px;
+		top: 5px;
+
+	}
+
+	#step2code {
+		position: relative;
+		top: -7px;
+		left: 3px;
+
+	}
+
+	#step3phone {
+		position: relative;
+		top: 16px;
+		left: 10px;
+		width: 170px;
+		height: auto;
+	}
+
+
+	/*About page*/
+	.about-page{
+
+		width: 100%;
+		height: 800px;
+		/*height: auto;*/
+		position: relative;
+		text-align: center;
+
+
+	}
+
+	.about-page h1 {
+		font-family: Source Sans Pro;
+		color: white;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		font-size: 3rem;
+
+	}
+
+	.about-text-container {
+		/*border: 1px solid white;*/
+		width: 80%;
+		margin: 0 auto;
+		height: auto;
+		text-align: left;
+	}
+
+	.about-text-container a {
+		color: white;
+
+	}
+
+
+	.about-text-container p {
+		font-family: Source Sans Pro;
+		color: white;
+
+	}
+
+	#about-me {
+		padding-top: 30px;
+	}
+	#about-me h3 {
+		font-family: Source Sans Pro;
+		color: white;
+
+	}
+
+
+	#nextpage {
+
+		position: relative;
+		height: 100px;
+		background-color: white;
+
+
+	}
+
+
+
+	footer {
+		/*height: 20%;*/
+		margin: 0 auto;
+		height: 110px;
+		width: 100%;
+		/*height: 100px;*/
+	/*	position: fixed;
+		right: 0;
+		bottom: 0;
+		width: 800px;
+*/		
+		background-color: #1f1f1f;
+		/*opacity: 0;*/
+	/*	animation-name: fadein;
+		animation-delay: 1.5s;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;*/
+		text-decoration: none;
+		position: relative;
+		text-align: center;
+
+
+
+	}
+
+
+
+	footer ul {
+		display: inline-flex;
+		position: relative;
+		top: 30px;
+		text-decoration: none;
+		
+	}
+
+	footer img {
+		width: 60px;
+		height: auto;
+		position: relative;
+		bottom: 18px;
+		text-decoration: : none;
+	}
+
+	footer ul li {
+		text-decoration: none;
+		list-style: none;
+		text-align: right;
+		position: relative;
+
+		
+	}
+
+	footer a {
+		font-size: 12px;
+		margin: 0px 30px;
+		text-align: right;
+		color: white;
+		font-family: Montserrat;
+		text-decoration: none;
+		position;
+
+	}
+
+	footer a:hover {
+		text-decoration: underline;
+	}
+
+
+	.final-footer {
+		width: 1200px;
+		text-align: right;
+		margin: 0 auto;
+		position: relative;
+		top: 16px;
+	}
+
+	footer p {
+		font-family: Montserrat;
+		color: white;
+		font-size: 0.7rem;
+		/*padding-bottom: 2rem;*/
+		/*padding-top: 1rem;*/
+		border-top: 1px solid white;
+	}
+
+
+	/*Fix footer*/
+	@media screen and (max-width: 1159px) {
+
+
+	/*HAMBURGER!!!!!!!!!*/
+	.nav-links {
+			position: absolute;
+			right: 0px;
+			height: 260px;
+			top: 63px;
+			background-color: #292929;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			transform: translateY(-150%);
+			animation-name: fadein;
+			animation-duration: 1s;
+			transition: transform 0.15s ease-in;
+			/*border: 1px solid red;*/
+			z-index: 9999;
+		}
+
+	.nav-links {
+		text-align: center;
+
+
+	}
+
+	.nav-links li {
+		opacity: 0;
+		width: 100%;
+		padding-top:;
+		border-top: 1px solid grey;
+
+
+	}
+
+	.nav-links li:hover {
+		background-color: #2e2e2e;
+		transition: 0.2s ease-in;
+	}
+
+	.nav-links li a:hover {
+		text-decoration: none;
+	}
+
+	.burger {
+		display: block;
+		cursor: pointer;
+		z-index: 10000;
+	}
+
+	.nav-link-active {
+		transform: translateX(0%);
+	}
+
+	.navbar-background {
+		background-color: #292929;
+	/*	animation-name: fadein;
+		animation-duration: 0.3s;*/
+	}
+
+	.nav-active {
+		background-color: #292929;
+/*		animation-name: fadein;
+		animation-duration: 2s;*/
+	}
+
+
+	@keyframes fadein {
+
+		0% { opacity:0; }
+    	66% { opacity:0; }
+    	100% { opacity:1; }
+
+	}
+
+	@keyframes navLinkFade {
+		from {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+
+	.toggle .line1 {
+		transform: rotate(-45deg) translate(-5px, 6px);
+
+
+	}
+
+	.toggle .line2 {
+		opacity: 0;
+		
+	}
+
+	.toggle .line3 {
+		transform: rotate(45deg) translate(-5px, -6px);
+		
+	}
+
+
+	.final-footer {
+		width: 800px;
+		text-align: right;
+		margin: 0 auto;
+		position: relative;
+		top: 16px;
+	}
+
+
+
+
+
+	}
+
+
+
+	/*Fix for mobile*/
+	@media screen and (max-width: 883px) {
+
+		.logo {
+		width: 100px;
+		height: auto;
+	}
+
+
+	.middle-container {
+		width: auto;
+	}
+
+
+
+	.steps {
+		display: block;
+		margin: 0;
+		/*border: 1px solid white;*/
+		padding-top: 100px;
+		padding-bottom: 100px;
+
+
+	}
+
+	.step {
+
+
+		/*flex: 1;*/
+		width: 300px;
+		/*height: 400px;*/
+		height: auto;
+		margin: 0 auto;
+		text-align: center;
+
+	}
+
+	#step1, #step2 {
+		border-right: 0px solid white;
+		border-bottom: 1px solid white;
+	}
+
+
+	.about-page{
+		width: 100%;
+		height: auto;
+		/*height: auto;*/
+		position: relative;
+		text-align: center;
+
+	}
+
+	footer {
+		margin-top: 80px;
+		display: inline-block;
+
+	}
+
+	footer img {
+		width: 30px;
+		bottom: 2px;
+
+	}
+
+	footer a {
+		font-size: 10px;
+		margin: 0px 15px;
+	}
+
+
+	.final-footer {
+		display:inline-block;
+		width: 340px;
+		text-align: right;
+		margin: 0 auto;
+		position: relative;
+		top: 16px;
+	}
+
+	footer p {
+		font-size: 0.3rem;
+	}
+
+
+
+	}
+
+	@media screen and (max-width: 563px) {
+
+/*	.logo {
+		width: 30px;
+	}*/
+	.header-branding h1 {
+		font-size: 1rem;
+	}
+
+	.headphones {
+		width: 80px;
+		top: 55px;
+		right: 170px;
+	}
+
+	.phone {
+		width: 80px;
+		left: 120px;
+		bottom: 320px;
+		/*top: 173px;
+		right: 67px;*/
+
+	}
+
+	}
+
+	@media screen and (max-width: 414px) {
+	
+	.headphones {
+		width: 80px;
+		top: 55px;
+		right: 145px;
+	}
+
+
+
+	}
+
+	

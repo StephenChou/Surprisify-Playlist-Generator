@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel = "stylesheet"
+   type = "text/css"
+   href = "{{ url_for('static', filename='style.css')}}"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+</head>
+
+	<body>	
+	<!-- header -->
+		<!-- <div class="header-branding"> -->
+		<header>
+		<nav class="navbar">
+			<img class="logo" src="/static/surprisifylogosmall.png">
+			<ul class="nav-links">
+				<li><a href="http://localhost:5000/">Home</a></li>
+				<li><a href="#how-it-works">How it works</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#about">Privacy</a></li>
+
+			</ul>
+			<div class="burger">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+
+
+		</nav>
+		</header>
+
+
+
+	<!-- middle -->
+	<div class="middle">
+		<div class="middle-container">
+			<img class="headphones" src="/static/headphones1.png">
+			<div class="middle-items">
+			<h1 class="middle-text">Surprisify Playlist Generator</h1>
+			<p class="middle-subtext">Exciting new playlists just for you.</p> 
+
+			<div class="login-button">
+			<p><a href='http://localhost:5000/login'>Login</a></p>
+			<img src="/static/login-button.png">
+			</div>
+			</div>
+			<img class="phone" src="/static/phone.png">
+		</div>
+	</div>
+
+
+	<!-- How it works page -->
+	<div id="step-with-border">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#292929" fill-opacity="1" d="M0,32L20,42.7C40,53,80,75,120,117.3C160,160,200,224,240,213.3C280,203,320,117,360,106.7C400,96,440,160,480,186.7C520,213,560,203,600,218.7C640,235,680,277,720,288C760,299,800,277,840,240C880,203,920,149,960,160C1000,171,1040,245,1080,272C1120,299,1160,277,1200,240C1240,203,1280,149,1320,133.3C1360,117,1400,139,1420,149.3L1440,160L1440,320L1420,320C1400,320,1360,320,1320,320C1280,320,1240,320,1200,320C1160,320,1120,320,1080,320C1040,320,1000,320,960,320C920,320,880,320,840,320C800,320,760,320,720,320C680,320,640,320,600,320C560,320,520,320,480,320C440,320,400,320,360,320C320,320,280,320,240,320C200,320,160,320,120,320C80,320,40,320,20,320L0,320Z"></path></svg>
+	<div id="how-it-works" class="step-page">
+		
+<!-- 		<div id="transition">
+		<img src="/static/transition.png" style='height: 100%; width: 100%; object-fit: contain'>
+		</div>
+		 -->
+		<div id="step-container">
+
+		<h1 class="title">How it works</h1>
+
+			<div class="steps">
+
+				<div id="step1" class="step">
+					<div class="box">
+						<img id="step1computer" src="/static/step1image.png">
+					</div>
+					<p><strong>Step 1:</strong><br>Login through Spotify. We use Spotify's secure authorization process to create playlists for you.</p>
+					
+				</div>
+
+				<div id="step2" class="step">
+		
+					<div class="box">
+						<img id="step2code" src="/static/step2image.png">
+					</div>
+					<p><strong>Step 2:</strong><br>When prompted, enter the desired "level". Generally, the higher the level, the more obscure. Levels higher than 2 tend to have many artists the user might not have heard of.</p>
+
+					
+
+				</div>
+
+				<div id="step3" class="step">
+				
+					<div class=box>
+						<img id="step3phone" src="/static/step3image.png">
+					</div>
+					
+					<p><strong>Step 3:</strong><br>Enjoy! Your new playlist will be waiting for you as soon as it's processed.</p>
+
+					
+
+				</div>
+
+		</div>
+
+	</div>
+	
+	</div>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#292929" fill-opacity="1" d="M0,96L30,90.7C60,85,120,75,180,58.7C240,43,300,21,360,64C420,107,480,213,540,218.7C600,224,660,128,720,117.3C780,107,840,181,900,186.7C960,192,1020,128,1080,106.7C1140,85,1200,107,1260,133.3C1320,160,1380,192,1410,208L1440,224L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+
+</div>
+
+
+
+
+	<!-- About page -->
+	<div id="about" class="about-page">
+		<h1>About</h1>
+
+		<div class="about-text-container">
+
+			<div id="about-general">
+			<p> Surprisify was created with the goal of giving Spotify users a quick platform to generate playlists of songs and artists that might be new to them. The usage of 'levels' was created to give the user full control over how obscure the artists and songs would be. The program uses Spotify's <a href="https://developer.spotify.com/documentation/web-api/">Web API</a> in order to gather data about the user's top artists listening history. It then randomly searches through related artists of the top artists, and given how high of a 'level' inputted by the user, goes indefinitely deep (similar to Inception) in to other related aritsts and gets recommended songs, before putting them all into a playlist. More info on the code can be found on <a href="https://github.com/StephenChou">GitHub.</a></p> 
+			</div>
+
+			<div id="about-me">
+			<h3>About me</h3>
+			<p>My name is Stephen Chou and I'm currently a freshman at The Ohio State University studying Data Analytics. I created this project while learning programming, both in and outside of class. I love listening to music, so I came up with the idea of a playlist generator that could generate a bunch of songs and artists that I've never heard of almost instantaneously given an obscurity "level". The program was made in Python and Flask (Web framework) and the website itself in HTML5 and CSS (some Photoshop too), all of which was coded from scratch. My contact links are below.</p>
+			</div>
+
+		</div>
+	</div>
+
+	<footer>
+		<ul>
+			<li class="linkedin"><a href="https://www.linkedin.com/in/stephen-chou-96a768165/"><img src="/static/li-logo.png"></a></li>
+			
+
+			<li class="github"><a href="https://github.com/StephenChou"><img src="/static/gh-logo.png"></a></li>
+			<li><a href="">About</a></li>
+			<li><a href="">Privacy</a></li>
+			<li><a href="https://www.instagram.com/stephen___chou/">@StephenChou</a></li>
+		</ul>
+		<div class="final-footer">
+		<p>@Surprisify 2020</p>
+		</div>
+		
+	</footer>
+	<script src="/static/app.js"></script>
+</body>
+</html>
