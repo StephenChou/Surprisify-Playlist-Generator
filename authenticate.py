@@ -23,7 +23,10 @@ def authenticate():
 	                               client_secret,
 	                               redirect_uri='http://localhost:8080/',
 	                               )
-	return token
+	if token:
+		return token
+	else:
+		return False
 
 def get_obscure_artist(artist_id, levels, spotifyObject):
 

@@ -5,7 +5,6 @@ const navSlide = () => {
 	const navbar = document.querySelector('.navbar')
 	//Toggle nav
 
-	var isOpen = false;
 	burger.addEventListener('click', ()=> {
 		
 

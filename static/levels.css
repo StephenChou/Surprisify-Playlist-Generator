@@ -8,6 +8,11 @@
 
 	}
 
+	p {
+		font-family: Source Sans Pro
+		color: white;
+	}
+
 	body {
 		background-image: url(/static/background7.png);
 		background-repeat: no-repeat;
@@ -557,11 +562,13 @@
 
 	footer {
 		/*height: 20%;*/
-		/*margin: 0 auto;*/
+		margin: 0 auto;
 		height: 110px;
 		width: 100%;
-		position: fixed;
-		top: 278px;
+/*		position: fixed;
+		top: 278px;*/
+		position: absolute;
+		top: 300px;
 		/*height: 100px;*/
 
 	/*	position: fixed;
@@ -653,7 +660,7 @@
 	.nav-links {
 			position: absolute;
 			right: 0px;
-			height: 260px;
+			height: 245px;
 			top: 63px;
 			background-color: #292929;
 			display: flex;
@@ -770,7 +777,7 @@
 	/*Fix for mobile*/
 	@media screen and (max-width: 883px) {
 
-		.logo {
+	.logo {
 		width: 100px;
 		height: auto;
 	}
