@@ -7,9 +7,9 @@ from os.path import join, dirname
 from authenticate import authenticate, generate
 
 
-app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/PersonalProjects/flask/surprisify/static')
+app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/Stephen/Programming/PersonalProjects/flask/surprisify/static')
 dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+
 
 
 SECRET_KEY = os.environ.get('SESSION_SECRET')
