@@ -7,12 +7,12 @@ import string
 import requests
 from urllib.parse import quote
 import base64
+import json
 
 #Important Variables
 client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
 state = ''.join(random.choice(string.ascii_lowercase + string.digits) for n in range(8))
-
 
 def req_auth():
 	
@@ -22,10 +22,10 @@ def req_auth():
     	"response_type": "code",
 		"redirect_uri": "http://localhost:8080/",
 		"show_dialog": "true",
-    	"client_id": client_id
+    	"client_id": client_id,
 	}
 
-	AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&show_dialog={auth_query_params["show_dialog"]}&state={state}'
+	AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&show_dialog={auth_query_params["show_dialog"]}&state={state}&scope={scope}'
 	return AUTH_FIRST_URL
 
 def req_token(code):
@@ -44,6 +44,7 @@ def req_token(code):
 	}
 
 	token_json = requests.post('https://accounts.spotify.com/api/token', data=token_data, headers=token_header)
+	print(token_json.json())
 	token = token_json.json()['access_token']
 
 	return token
@@ -60,7 +61,20 @@ def get_obscure_artist(artist_id, levels, spotifyObject):
     finalid = get_obscure_artist(tempid, levels -1, spotifyObject)
     return finalid
 
+
 def generate(token, levels):
+
+	url = 'https://api.spotify.com/v1/me/top/artists'
+	header = {
+		'Authorization': f'Bearer {token}'
+	}
+
+	top_artists = requests.get(url, headers=header)
+	print(top_artists)
+
+
+
+def generate1(token, levels):
 
 	spotifyObject = spotipy.Spotify(auth=token)
 
