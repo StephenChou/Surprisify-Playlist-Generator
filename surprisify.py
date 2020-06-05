@@ -5,7 +5,7 @@ import requests
 import sys
 import os
 from os.path import join, dirname
-from authenticate import req_auth, req_token, generate
+from spotify_actions import req_auth, req_token, generate
 
 app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/Stephen/Programming/PersonalProjects/flask/surprisify/static')
 dotenv_path = join(dirname(__file__), '.env')
