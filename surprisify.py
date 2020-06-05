@@ -16,24 +16,20 @@ dotenv_path = join(dirname(__file__), '.env')
 SECRET_KEY = os.environ.get('SESSION_SECRET')
 app.secret_key = SECRET_KEY
 
-
+#Home view
 @app.route('/')
 @app.route('/home')
 def home():
 	return render_template('home.html', title='Home')
 
-
-@app.route('/about')
-def about():
-
-	return render_template('about.html', title='About')
-
+#Login view
 @app.route('/login', methods=['GET','POST'])
 def login():
 
 	AUTH_FIRST = req_auth()
 	return redirect(AUTH_FIRST)
 
+#Callback view for Spotify API
 @app.route('/callback')
 def callback():
 	if request.args.get('error') or not request.args.get('code'):
@@ -45,6 +41,7 @@ def callback():
 
 		return redirect(url_for('generate_playlist'))
 
+#Generate playlist view
 @app.route('/generate_playlist', methods=['GET', 'POST'])
 def generate_playlist():
 
