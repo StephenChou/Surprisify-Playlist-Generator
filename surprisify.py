@@ -40,8 +40,7 @@ def callback():
 		return redirect(url_for('home'))
 	else:
 		code = request.args.get('code')
-		token_json = req_token(code)
-		token = token_json.json()['access_token']
+		token = req_token(code)
 		session['token'] = token
 
 		return redirect(url_for('generate_playlist'))

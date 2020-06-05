@@ -22,11 +22,10 @@ def req_auth():
     	"response_type": "code",
 		"redirect_uri": "http://localhost:8080/",
 		"show_dialog": "true",
-    	"scope": scope,
     	"client_id": client_id
 	}
 
-	AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&scope={quote(scope)}&show_dialog={auth_query_params["show_dialog"]}&state={state}'
+	AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&show_dialog={auth_query_params["show_dialog"]}&state={state}'
 	return AUTH_FIRST_URL
 
 def req_token(code):
