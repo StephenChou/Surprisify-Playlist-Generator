@@ -3,12 +3,15 @@ import os
 import spotipy
 import spotipy.util as util
 import random
+import string
 import requests
 from urllib.parse import quote
 import base64
 
+#Important Variables
 client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
+state = ''.join(random.choice(string.ascii_lowercase + string.digits) for n in range(8))
 
 
 def req_auth():
@@ -23,12 +26,26 @@ def req_auth():
     	"client_id": client_id
 	}
 
-	AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&scope={quote(scope)}&show_dialog={auth_query_params["show_dialog"]}'
+	AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&scope={quote(scope)}&show_dialog={auth_query_params["show_dialog"]}&state={state}'
 	return AUTH_FIRST_URL
 
 def req_token(code):
-	pass
 
+	client_creds = f"{client_id}:{client_secret}"
+	client_creds_b64 = base64.b64encode(client_creds.encode())
+
+	token_data = {
+		"grant_type": "authorization_code",
+		"code": code,
+		"redirect_uri": "http://localhost:5000/callback"
+	}
+
+	token_header = {
+		"Authorization": f"Basic {client_creds_b64.decode()}"
+	}
+
+	token_json = requests.post('https://accounts.spotify.com/api/token', data=token_data, headers=token_header)
+	return token_json
 
 
 def get_obscure_artist(artist_id, levels, spotifyObject):

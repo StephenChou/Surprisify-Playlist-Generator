@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import requests
 import sys
 import os
+import json
 from os.path import join, dirname
 from spotify_actions import req_auth, req_token, generate
 
@@ -35,12 +36,15 @@ def login():
 
 @app.route('/callback')
 def callback():
-	if request.args.get('error'):
+	if request.args.get('error') or not request.args.get('code'):
 		return redirect(url_for('home'))
 	else:
 		code = request.args.get('code')
-		req_token(code)
-		return 
+		token_json = req_token(code)
+		token = token_json.json()['access_token']
+		session['token'] = token
+
+		return redirect(url_for('generate_playlist'))
 
 @app.route('/generate_playlist', methods=['GET', 'POST'])
 def generate_playlist():
@@ -51,7 +55,10 @@ def generate_playlist():
 		return redirect(url_for('processing'))
 
 	else:
-		return render_template('generate_playlist.html', title='generate playlist')
+		if session.get('token'):
+			return render_template('generate_playlist.html', title='generate playlist')
+		else:
+			return redirect(url_for('home'))
 
 @app.route('/processing', methods=['GET', 'POST'])
 def processing():
