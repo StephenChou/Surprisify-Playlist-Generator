@@ -9,9 +9,6 @@ from os.path import join, dirname
 from spotify_actions import req_auth, req_token, generate
 
 app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/Stephen/Programming/PersonalProjects/flask/surprisify/static')
-dotenv_path = join(dirname(__file__), '.env')
-
-
 
 SECRET_KEY = os.environ.get('SESSION_SECRET')
 app.secret_key = SECRET_KEY
@@ -46,24 +43,17 @@ def callback():
 def generate_playlist():
 
 	if request.method == 'POST':
-		level = request.form['level']
-		session["level"] = level
-		return redirect(url_for('processing'))
+		levels = int(float(request.form['level']))
+		token = session.get("token", None)
+		generate(token, levels)
+
+		return redirect(url_for('success'))
 
 	else:
 		if session.get('token'):
 			return render_template('generate_playlist.html', title='generate playlist')
 		else:
 			return redirect(url_for('home'))
-
-@app.route('/processing', methods=['GET', 'POST'])
-def processing():
-	levels = int(float(session.get("level", None)))
-	token = session.get("token", None)
-	
-	generate(token, levels)
-	return redirect(url_for('success'))
-
 
 @app.route('/success')
 def success():
