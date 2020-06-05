@@ -5,7 +5,7 @@ import requests
 import sys
 import os
 from os.path import join, dirname
-from authenticate import authenticate, generate
+from authenticate import req_auth, req_token, generate
 
 app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/Stephen/Programming/PersonalProjects/flask/surprisify/static')
 dotenv_path = join(dirname(__file__), '.env')
@@ -30,21 +30,21 @@ def about():
 @app.route('/login', methods=['GET','POST'])
 def login():
 
-	AUTH_URL = authenticate()
+	AUTH_FIRST = req_auth()
+	return redirect(AUTH_FIRST)
 
-	return redirect(AUTH_URL)
-
-@app.route('/callback'):
-def callback()
-	if request.args['error']:
+@app.route('/callback')
+def callback():
+	if request.args.get('error'):
 		return redirect(url_for('home'))
 	else:
-		pass
-
+		code = request.args.get('code')
+		req_token(code)
+		return 
 
 @app.route('/generate_playlist', methods=['GET', 'POST'])
 def generate_playlist():
-	
+
 	if request.method == 'POST':
 		level = request.form['level']
 		session["level"] = level

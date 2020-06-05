@@ -11,9 +11,7 @@ client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
 
 
-
-
-def authenticate():
+def req_auth():
 	
 	scope = 'user-top-read user-library-read playlist-modify-public'
 	
@@ -25,8 +23,13 @@ def authenticate():
     	"client_id": client_id
 	}
 
-	auth_first = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/generate_playlist")}&scope={quote(scope)}&show_dialog={auth_query_params["show_dialog"]}'
-	return auth_first
+	AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&scope={quote(scope)}&show_dialog={auth_query_params["show_dialog"]}'
+	return AUTH_FIRST_URL
+
+def req_token(code):
+	pass
+
+
 
 def get_obscure_artist(artist_id, levels, spotifyObject):
 
