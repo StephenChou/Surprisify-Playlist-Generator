@@ -4,7 +4,7 @@ import spotipy
 import spotipy.util as util
 import random
 import requests
-# from urllib.parse import urlencode
+from urllib.parse import quote
 import base64
 
 client_id = os.environ.get("CLIENT_ID")
@@ -20,16 +20,13 @@ def authenticate():
 	auth_query_params = {
     	"response_type": "code",
 		"redirect_uri": "http://localhost:8080/",
+		"show_dialog": "true",
     	"scope": scope,
     	"client_id": client_id
 	}
 
-	response = requests.get('https://accounts.spotify.com/authorize', headers=auth_query_params)
-	return response
-
-
-
-
+	auth_first = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/generate_playlist")}&scope={quote(scope)}&show_dialog={auth_query_params["show_dialog"]}'
+	return auth_first
 
 def get_obscure_artist(artist_id, levels, spotifyObject):
 

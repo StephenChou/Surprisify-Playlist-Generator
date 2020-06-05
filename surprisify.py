@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 import requests
 import sys
 import os
-from urllib.parse import quote
 from os.path import join, dirname
 from authenticate import authenticate, generate
 
@@ -20,7 +19,6 @@ app.secret_key = SECRET_KEY
 @app.route('/')
 @app.route('/home')
 def home():
-	print(os.environ)
 	return render_template('home.html', title='Home')
 
 
@@ -32,19 +30,16 @@ def about():
 @app.route('/login', methods=['GET','POST'])
 def login():
 
-	if request.method =='GET':
-		client_id = os.environ.get('CLIENT_ID')
+	AUTH_URL = authenticate()
 
-		scope = 'user-top-read user-library-read playlist-modify-public'
-		
-		auth_query_params = {
-	    	"response_type": "code",
-			"redirect_uri": "http://localhost:8080/",
-	    	"scope": scope,
-	    	"client_id": client_id
-		}
+	return redirect(AUTH_URL)
 
-		return redirect(f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/generate_playlist")}&scope={quote(scope)}')
+@app.route('/callback'):
+def callback()
+	if request.args['error']:
+		return redirect(url_for('home'))
+	else:
+		pass
 
 
 @app.route('/generate_playlist', methods=['GET', 'POST'])
