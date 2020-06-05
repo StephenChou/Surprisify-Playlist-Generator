@@ -44,13 +44,8 @@ def login():
 	    	"client_id": client_id
 		}
 
-		return redirect(f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:8080/")}&scope={quote(scope)}')
+		return redirect(f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/generate_playlist")}&scope={quote(scope)}')
 
-
-@app.route('/callback')
-def callback():
-
-	return redirect(url_for('generate_playlist'))
 
 @app.route('/generate_playlist', methods=['GET', 'POST'])
 def generate_playlist():
