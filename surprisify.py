@@ -1,11 +1,12 @@
 from flask import Flask, escape, request, render_template, redirect, url_for, session
 import subprocess
 from dotenv import load_dotenv
+import requests
 import sys
 import os
+from urllib.parse import quote
 from os.path import join, dirname
 from authenticate import authenticate, generate
-
 
 app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/Stephen/Programming/PersonalProjects/flask/surprisify/static')
 dotenv_path = join(dirname(__file__), '.env')
@@ -31,8 +32,20 @@ def about():
 @app.route('/login', methods=['GET','POST'])
 def login():
 
-	auth_first = authenticate()
-	return auth_first.text
+	if request.method =='GET':
+		client_id = os.environ.get('CLIENT_ID')
+
+		scope = 'user-top-read user-library-read playlist-modify-public'
+		
+		auth_query_params = {
+	    	"response_type": "code",
+			"redirect_uri": "http://localhost:8080/",
+	    	"scope": scope,
+	    	"client_id": client_id
+		}
+
+		return redirect(f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:8080/")}&scope={quote(scope)}')
+
 
 @app.route('/callback')
 def callback():
