@@ -31,17 +31,13 @@ def about():
 @app.route('/login', methods=['GET','POST'])
 def login():
 
-	# if request.method == 'GET':
-	# try:	
-	tokenAuth = authenticate()
+	auth_first = authenticate()
+	return auth_first.text
 
-	if tokenAuth:
-		session["token"] = tokenAuth
-		return redirect(url_for('generate_playlist'))
-	else:
-		return redirect(url_for('home'));
-	# except Exception as e:
-	# 	return redirect(url_for('home'))
+@app.route('/callback')
+def callback():
+
+	return redirect(url_for('generate_playlist'))
 
 @app.route('/generate_playlist', methods=['GET', 'POST'])
 def generate_playlist():

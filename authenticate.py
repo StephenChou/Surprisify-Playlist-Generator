@@ -11,22 +11,25 @@ client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
 
 
+
+
 def authenticate():
 	
 	scope = 'user-top-read user-library-read playlist-modify-public'
-	username = sys.argv[0]
+	
+	auth_query_params = {
+    	"response_type": "code",
+		"redirect_uri": "http://localhost:8080/",
+    	"scope": scope,
+    	"client_id": client_id
+	}
 
-	# try:
-	token = util.prompt_for_user_token(username,
-	                               scope,
-	                               client_id,
-	                               client_secret,
-	                               redirect_uri='http://localhost:8080/',
-	                               )
-	if token:
-		return token
-	else:
-		return False
+	response = requests.get('https://accounts.spotify.com/authorize', headers=auth_query_params)
+	return response
+
+
+
+
 
 def get_obscure_artist(artist_id, levels, spotifyObject):
 
