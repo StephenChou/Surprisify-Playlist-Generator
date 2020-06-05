@@ -48,13 +48,22 @@ def req_token(code):
 	expires_in = token_json.json()['expires_in']
 	expires = now + datetime.timedelta(seconds=expires_in)
 
-	if expires < now:
-		token = token_json.json()['refresh_token']
+	if now > expires:
+		
+		refresh_token_data = {
+			"grant_type": "refresh_token",
+			"refresh_token": token_json.json()['refresh_token']
+		}
+
+		refresh_token_json = requests.post('https://accounts.spotify.com/api/token', data=refresh_token_data, headers=token_header)
+		token = refresh_token_json.json()['access_token']
+
 		return token
 	else:
-		token = token_json.json()['access_token']
-		return token
 
+		token = token_json.json()['access_token']
+
+		return token
 
 def get_obscure_artist(artist_id, levels, spotifyObject):
 
@@ -62,7 +71,7 @@ def get_obscure_artist(artist_id, levels, spotifyObject):
     
     if (levels == 1):
         return artist_id
-    
+
     tempid = spotifyObject.artist_related_artists(artist_id)['artists'][rnd_artist]['id']
     finalid = get_obscure_artist(tempid, levels -1, spotifyObject)
     return finalid
