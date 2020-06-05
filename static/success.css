@@ -36,6 +36,124 @@ h1 {
 	100% { opacity:1; }
 
 }
+
+	.logo {
+		margin: 0px auto 0px 30px;
+		
+		opacity: 0;
+		animation-delay: 1s;
+		animation-name: fadein;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+		shape-rendering: crispEdges;
+
+	}
+
+	.navbar h1 {
+		font-family: Source Sans Pro;
+		color: white;
+		font-size: 2rem;
+
+	
+
+
+	}
+
+
+	.header-subtext {
+		color: white;
+		font-family: Montserrat;
+		font-size: 12px;
+		text-align: left;
+		position: relative;
+		bottom: 5px;
+		left: 100px;
+		width:120px;
+
+		opacity: 0;
+		animation-delay: 1s;
+		animation-name: fadein;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+
+	}
+
+	header {
+		/*background-color: #292929;*/
+		position: relative;
+		top: 0;
+		z-index: 9999;
+		width: 100%;
+
+		opacity: 0;
+		animation-delay: 1s;
+		animation-name: fadein;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+ 
+	}
+
+	.navbar {
+
+		text-align: right;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		min-height: 10vh;
+		background-color;
+		
+	}
+
+	.nav-links {
+		margin: 0;
+		padding: 0;
+		display: flex;
+	/*	justify-content: space-around;*/
+		/*width: 30%;	*/
+	}
+
+	.nav-links li {
+		list-style: none;
+		margin: 0 30px;
+		
+	}
+
+	.nav-links li a {
+		font-family: Source Sans Pro;
+		font-weight: 200px;
+		color: white;
+		text-decoration: none;
+		font-size: 1rem;
+		display: block;
+		margin: 10px 0;
+		padding: 10px 20px;
+
+	}
+
+	.nav-links li a:hover {
+		text-decoration: underline;
+		background-color;
+		transition;
+	}
+
+
+	.burger {
+		margin-right: 30px;
+		display: none;
+	}
+
+	.burger div{
+		background-color: white;
+		width: 25px;
+		height: 3px;
+		margin: 5px;
+		border-radius: 2px;
+		transition: all 0.3s ease;
+
+	}
+
+
+
 #container {
 	min-height: 789px;
 }

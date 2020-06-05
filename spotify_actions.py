@@ -44,7 +44,9 @@ def req_token(code):
 	}
 
 	token_json = requests.post('https://accounts.spotify.com/api/token', data=token_data, headers=token_header)
-	return token_json
+	token = token_json.json()['access_token']
+
+	return token
 
 
 def get_obscure_artist(artist_id, levels, spotifyObject):
