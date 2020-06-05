@@ -8,6 +8,7 @@ import requests
 from urllib.parse import quote
 import base64
 import json
+import datetime
 
 client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
@@ -16,31 +17,43 @@ scope = 'user-top-read user-library-read playlist-modify-public'
 
 def req_auth():
 	
-	show_dialog = "true"
+	show_dialog = "false"
 
 	AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&show_dialog={show_dialog}&state={state}&scope={scope}'
 	return AUTH_FIRST_URL
 
 def req_token(code):
 
+	#B64 encode variables
 	client_creds = f"{client_id}:{client_secret}"
 	client_creds_b64 = base64.b64encode(client_creds.encode())
 
+	#Token data
 	token_data = {
 		"grant_type": "authorization_code",
 		"code": code,
 		"redirect_uri": "http://localhost:5000/callback"
 	}
 
+	#Token header
 	token_header = {
 		"Authorization": f"Basic {client_creds_b64.decode()}"
 	}
 
+	#Make request post for token info
 	token_json = requests.post('https://accounts.spotify.com/api/token', data=token_data, headers=token_header)
-	print(token_json.json())
-	token = token_json.json()['access_token']
 
-	return token
+	#Checking if token is still valid, otherwise, refresh
+	now = datetime.datetime.now()
+	expires_in = token_json.json()['expires_in']
+	expires = now + datetime.timedelta(seconds=expires_in)
+
+	if expires < now:
+		token = token_json.json()['refresh_token']
+		return token
+	else:
+		token = token_json.json()['access_token']
+		return token
 
 
 def get_obscure_artist(artist_id, levels, spotifyObject):
@@ -49,7 +62,7 @@ def get_obscure_artist(artist_id, levels, spotifyObject):
     
     if (levels == 1):
         return artist_id
-
+    
     tempid = spotifyObject.artist_related_artists(artist_id)['artists'][rnd_artist]['id']
     finalid = get_obscure_artist(tempid, levels -1, spotifyObject)
     return finalid
