@@ -8,8 +8,33 @@ import json
 from os.path import join, dirname
 from spotify_actions import req_auth, req_token, generate
 
+'''
+
+App Config
+
+'''
+
+
+
 app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/Stephen/Programming/PersonalProjects/flask/surprisify/static')
-app.secret_key = os.environ.get('SESSION_SECRET')
+app.secret_key = os.urandom(16)
+
+if app.config['ENV'] == 'development':
+	app.config.from_object('config.DevelopmentConfig')
+
+elif app.config['ENV'] == 'testing':
+	app.confgi.from_object('config.TestingConfig')
+
+else:
+	app.config.from_object('config.ProductionConfig')
+
+
+'''
+
+Views
+
+'''
+
 
 #Home view
 @app.route('/')
@@ -63,8 +88,8 @@ def privacy():
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
-	app.config.from_object('config.DevelopmentConfig')
+	app.run()
+	
 
 
 	
