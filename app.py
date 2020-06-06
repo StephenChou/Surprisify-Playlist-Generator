@@ -21,14 +21,14 @@ app.secret_key = os.urandom(16)
 app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
 
-# if app.config['ENV'] == 'development':
-# 	app.config.from_object('config.DevelopmentConfig')
+if app.config['ENV'] == 'development':
+	app.config.from_object('config.DevelopmentConfig')
 
-# elif app.config['ENV'] == 'testing':
-# 	app.confgi.from_object('config.TestingConfig')
+elif app.config['ENV'] == 'testing':
+	app.confgi.from_object('config.TestingConfig')
 
-# else:
-# 	app.config.from_object('config.ProductionConfig')
+else:
+	app.config.from_object('config.ProductionConfig')
 
 
 
