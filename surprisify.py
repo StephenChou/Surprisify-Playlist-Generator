@@ -8,12 +8,12 @@ import json
 from os.path import join, dirname
 from spotify_actions import req_auth, req_token, generate
 
+
 '''
 
 App Config
 
 '''
-
 
 
 app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/Stephen/Programming/PersonalProjects/flask/surprisify/static')
@@ -27,6 +27,8 @@ elif app.config['ENV'] == 'testing':
 
 else:
 	app.config.from_object('config.ProductionConfig')
+
+
 
 
 '''
@@ -78,10 +80,12 @@ def generate_playlist():
 		else:
 			return redirect(url_for('home'))
 
+#Success landing page
 @app.route('/success')
 def success():
 	return render_template('success.html', title='success')
 
+#Success landing page
 @app.route('/privacy')
 def privacy():
 	return render_template('privacy.html')
