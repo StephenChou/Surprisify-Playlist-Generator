@@ -7,7 +7,7 @@ import os
 import json
 from os.path import join, dirname
 from spotify_actions import req_auth, req_token, generate
-
+from whitenoise import WhiteNoise
 
 '''
 
@@ -18,6 +18,9 @@ App Config
 
 app = Flask(__name__, static_folder='/Users/stephenchou/Desktop/Stephen/Programming/PersonalProjects/flask/surprisify/static')
 app.secret_key = os.urandom(16)
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
+
+
 
 if app.config['ENV'] == 'development':
 	app.config.from_object('config.DevelopmentConfig')
