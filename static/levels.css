@@ -13,7 +13,7 @@
 		color: white;
 	}
 
-	body {
+	html, body {
 		background-image: url(/static/background7.png);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -46,6 +46,17 @@
 
 	}
 
+	#container {
+		min-height: 100%;
+
+	}
+
+	#main {
+		padding-bottom: 110px;
+		overflow: auto;
+		margin: 0 auto;
+	}
+
 	.logo {
 		margin: 0px auto 0px 30px;
 		
@@ -62,8 +73,6 @@
 		font-family: Source Sans Pro;
 		color: white;
 		font-size: 2rem;
-
-	
 
 
 	}
@@ -89,10 +98,10 @@
 
 	header {
 		/*background-color: #292929;*/
-		position: relative;
+	/*	position: relative;
 		top: 0;
 		z-index: 9999;
-		width: 100%;
+*/		width: 100%;
 
 		opacity: 0;
 		animation-delay: 1s;
@@ -140,9 +149,10 @@
 	}
 
 	.nav-links li a:hover {
-		text-decoration: underline;
+		color: #DFDFDF;
 		background-color;
-		transition;
+		transition: ease 0.2s;
+
 	}
 
 
@@ -214,16 +224,14 @@
 		display: flex;
 		justify-content: center;
 		/*border: 1px solid white;*/
-		height: 130px;
+		/*height: 130px;*/
 
 	}
 
 	.middle {
 		margin: 0 auto;
 		text-align: center;
-		/*border: 1px solid white;*/
 		width: 500px;
-		height: 300px;
 		position: relative;
 		top: 100px;
 	}
@@ -232,6 +240,7 @@
 		font-family: Source Sans Pro;
 		font-size;
 		color: white;
+		padding-top: 3vh;
 
 		opacity:0;
 		animation-name: fadein;
@@ -302,273 +311,17 @@
 		animation-fill-mode: forwards;
 	}*/
 
-	.login-button img {
-	/*	width: 200px;
-		height: auto;
-		margin: 0 auto;
-		left: 200px;;
-		position: absolute;
-		top: -45px;*/
-
-		width: 200px;
-		height: auto;
-		position: relative;
-		bottom: 40px;
-
-		opacity: 0;
-		animation-name: fadein;
-		animation-delay: 1s;
-		animation-duration: 2s;
-		animation-fill-mode: forwards;
-
-	}
-
-	.login-button p {
-		z-index: 999;
-		font-family: Montserrat;
-		text-align: center;
-		position: relative;
-		top: 113px;
-		left: 16px;
-	}
-
-	.login-button a {		
-		text-decoration: none;
-		color: white;
-
-		position: relative;
-		bottom: 40px;
-
-		opacity: 0;
-		animation-name: fadein;
-		animation-delay: 1s;
-		animation-duration: 2s;
-		animation-fill-mode: forwards;
-
-
-	}
-
-	.login-button a:hover {
-		text-decoration: underline;
-	}
-
-
-	#step-with-border {
-		height: auto;
-	}
-
-	#transition {
-
-		position: absolute;
-	}
-
-	.step-page{
-
-		width: 100%;
-		background-color: #292929;
-		height: auto;
-		position: relative;
-
-
-
-	}
-
-	svg {
-		/*width: 100%;
-		height: auto;*/
-		display: block;
-
-	}
-
-
-
-	.title {
-	/*	padding-top: 70px;*/
-		text-align: center;
-		/*display: flex;*/
-		font-family: Source Sans Pro;
-		color: white;
-		font-size: 3rem;
-		position:relative;
-		top: 60px;
-	}
-
-	#step-container {
-		position: relative;
-/*		top: 100px;*/
-	}
-
-
-
-	.step-page p {
-		
-		font-family: Montserrat;
-		color: white;
-		padding: 20px 20px 20px 20px;
-	}
-
-
-
-	.steps {
-		display: flex;
-		margin: 0;
-		/*border: 1px solid white;*/
-		padding-top: 100px;
-		padding-bottom: 100px;
-
-
-	}
-
-
-	.step {
-
-
-		flex: 1;
-		width: 200px;
-		/*height: 400px;*/
-		height: auto;
-		margin: 20px;
-		text-align: center;
-
-	}
-
-	#step1, #step2 {
-		border-right: 1px solid white;
-		border-bottom;
-	}
-
-	.step h1 {
-		color: white;
-		text-align: center;
-		font-family: Source Sans Pro;
-		font-weight: 500;
-		color: white;
-	}
-
-	.step p {
-		font-family: Source Sans Pro;
-		color: white;
-	}
-
-
-	.step img {
-		width: 200px;
-		height: auto;
-		position: relative;
-		top: 80px;
-		left: 90px;
-
-	}
-
-	.box {
-		background-color: #1d1d1d;
-		/*position: absolute;
-		top: 1100px;*/
-		width: 80%;
-		height: 200px;
-		margin: 0 auto;
-		margin-top: 30px;
-		margin-bottom: 10px;
-		text-align: center;
-		position: relative;
-		overflow: hidden;
-
-	}
-
-	#step1computer {
-		position: relative;
-		left: 3px;
-		top: 5px;
-
-	}
-
-	#step2code {
-		position: relative;
-		top: -7px;
-		left: 3px;
-
-	}
-
-	#step3phone {
-		position: relative;
-		top: 16px;
-		left: 10px;
-		width: 170px;
-		height: auto;
-	}
-
-
-	/*About page*/
-	.about-page{
-
-		width: 100%;
-		height: 800px;
-		/*height: auto;*/
-		position: relative;
-		text-align: center;
-
-
-	}
-
-	.about-page h1 {
-		font-family: Source Sans Pro;
-		color: white;
-		padding-top: 50px;
-		padding-bottom: 50px;
-		font-size: 3rem;
-
-	}
-
-	.about-text-container {
-		/*border: 1px solid white;*/
-		width: 80%;
-		margin: 0 auto;
-		height: auto;
-		text-align: left;
-	}
-
-	.about-text-container a {
-		color: white;
-
-	}
-
-
-	.about-text-container p {
-		font-family: Source Sans Pro;
-		color: white;
-
-	}
-
-	#about-me {
-		padding-top: 30px;
-	}
-	#about-me h3 {
-		font-family: Source Sans Pro;
-		color: white;
-
-	}
-
-
-	#nextpage {
-
-		position: relative;
-		height: 100px;
-		background-color: white;
-
-
-	}
-
-
 
 	footer {
 		/*height: 20%;*/
 		margin: 0 auto;
 		height: 110px;
+		margin-top: -110px;
 		width: 100%;
 /*		position: fixed;
 		top: 278px;*/
-		position: absolute;
-		top: 300px;
+	/*	position: absolute;
+		top: 300px;*/
 		/*height: 100px;*/
 
 	/*	position: fixed;

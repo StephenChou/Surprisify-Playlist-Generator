@@ -8,7 +8,7 @@
 }
 
 
-body {
+html, body {
 		background-image: url(/static/background7.png);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -36,6 +36,19 @@ h1 {
 	100% { opacity:1; }
 
 }
+
+	#container {
+		min-height: 100%;
+
+	}
+
+	#main {
+		padding-bottom: 110px;
+		overflow: auto;
+		margin: 0 auto;
+	}
+
+
 
 	.logo {
 		margin: 0px auto 0px 30px;
@@ -131,9 +144,10 @@ h1 {
 	}
 
 	.nav-links li a:hover {
-		text-decoration: underline;
+		color: #DFDFDF;
 		background-color;
-		transition;
+		transition: ease 0.2s;
+
 	}
 
 
@@ -152,43 +166,30 @@ h1 {
 
 	}
 
-
-
-#container {
-	min-height: 789px;
-}
-
 #middle {
-	/*border: 1px solid white;*/
 	height: 450px;
 	line-height: 450px;
 	text-align: center;
-	position:relative;
-	top: 40px;
+
 
 }
 
-#middle_text {
-	line-height: 1.0;
-	display: inline-block;
-	vertical-align: middle;
-
-	opacity: 0;
-	animation-name: fadein;
-	animation-delay: 0s;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
+.buttons {
+	display: flex;
+	padding-top: 5vh;
+	margin: 0 auto;	
+	width: 50vh;
 }
 
-#button {
+#button1, #button2 {
 	background-color: #292929;
 	margin: 0 auto;
 	height: 50px;
 	width: 150px;
 	border-radius: 2rem;
 	line-height: 50px;
-	position: relative;
-	top: 30px;
+	/*position: relative;
+	top: 30px;*/
 
 	opacity: 0;
 	animation-name: fadein;
@@ -197,14 +198,42 @@ h1 {
 	animation-fill-mode: forwards;
 }
 
+
+#middle_text {
+	line-height: 1.0;
+	display: inline-block;
+	height: auto;
+	position: relative;
+	top: 20%;
+
+	opacity: 0;
+	animation-name: fadein;
+	animation-delay: 0s;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+
+}
+
+#middle_text h1 {
+	margin: 0 auto;
+	/*position: absolute;
+	top: 10vh;*/
+}
+
+
 #middle_text p {
 	font-family: Source Sans Pro;
+	text-align: center;
+	position: relative;
+	top: 1.3vh;
 	font-size: 1rem;
 	font-weight: 400px;
 	color: white;
+	line-height: 1.5rem;
 
 
 }
+
 
 #middle_text a {
 	color: white;
@@ -289,3 +318,249 @@ footer p {
 	/*padding-top: 1rem;*/
 	border-top: 1px solid white;
 }
+
+	@media screen and (max-width: 1159px) {
+
+
+	/*HAMBURGER!!!!!!!!!*/
+	.nav-links {
+			position: absolute;
+			right: 0px;
+			height: 260px;
+			top: 63px;
+			background-color: #292929;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			transform: translateY(-150%);
+			animation-name: fadein;
+			animation-duration: 1s;
+			transition: transform 0.15s ease-in;
+			/*border: 1px solid red;*/
+			z-index: 9999;
+		}
+
+	.nav-links {
+		text-align: center;
+
+
+	}
+
+	.nav-links li {
+		opacity: 0;
+		width: 100%;
+		padding-top:;
+		border-top: 1px solid grey;
+
+
+	}
+
+	.nav-links li:hover {
+		background-color: #2e2e2e;
+		transition: 0.2s ease-in;
+	}
+
+	.nav-links li a:hover {
+		text-decoration: none;
+	}
+
+	.burger {
+		display: block;
+		cursor: pointer;
+		z-index: 10000;
+	}
+
+	.nav-link-active {
+		transform: translateX(0%);
+	}
+
+	.navbar-background {
+		background-color: #292929;
+	/*	animation-name: fadein;
+		animation-duration: 0.3s;*/
+	}
+
+	.nav-active {
+		background-color: #292929;
+/*		animation-name: fadein;
+		animation-duration: 2s;*/
+	}
+
+
+	@keyframes fadein {
+
+		0% { opacity:0; }
+    	66% { opacity:0; }
+    	100% { opacity:1; }
+
+	}
+
+	@keyframes navLinkFade {
+		from {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+
+	.toggle .line1 {
+		transform: rotate(-45deg) translate(-5px, 6px);
+
+
+	}
+
+	.toggle .line2 {
+		opacity: 0;
+		
+	}
+
+	.toggle .line3 {
+		transform: rotate(45deg) translate(-5px, -6px);
+		
+	}
+
+
+	.final-footer {
+		width: 800px;
+		text-align: right;
+		margin: 0 auto;
+		position: relative;
+		top: 16px;
+	}
+
+
+
+
+
+	}
+
+
+
+	/*Fix for mobile*/
+	@media screen and (max-width: 883px) {
+
+		.logo {
+		width: 100px;
+		height: auto;
+	}
+
+
+	.middle-container {
+		width: auto;
+	}
+
+
+
+	.steps {
+		display: block;
+		margin: 0;
+		/*border: 1px solid white;*/
+		padding-top: 100px;
+		padding-bottom: 100px;
+
+
+	}
+
+	.step {
+
+
+		/*flex: 1;*/
+		width: 300px;
+		/*height: 400px;*/
+		height: auto;
+		margin: 0 auto;
+		text-align: center;
+
+	}
+
+	#step1, #step2 {
+		border-right: 0px solid white;
+		border-bottom: 1px solid white;
+	}
+
+
+	.about-page{
+		width: 100%;
+		height: auto;
+		/*height: auto;*/
+		position: relative;
+		text-align: center;
+
+	}
+
+	footer {
+		margin-top: 80px;
+		display: inline-block;
+
+	}
+
+	footer img {
+		width: 30px;
+		bottom: 2px;
+
+	}
+
+	footer a {
+		font-size: 10px;
+		margin: 0px 15px;
+	}
+
+
+	.final-footer {
+		display:inline-block;
+		width: 340px;
+		text-align: right;
+		margin: 0 auto;
+		position: relative;
+		top: 16px;
+	}
+
+	footer p {
+		font-size: 0.3rem;
+	}
+
+
+
+	}
+
+	@media screen and (max-width: 563px) {
+
+/*	.logo {
+		width: 30px;
+	}*/
+	.header-branding h1 {
+		font-size: 1rem;
+	}
+
+	.headphones {
+		width: 80px;
+		top: 55px;
+		right: 170px;
+	}
+
+	.phone {
+		width: 80px;
+		left: 120px;
+		bottom: 320px;
+		/*top: 173px;
+		right: 67px;*/
+
+	}
+
+	}
+
+	@media screen and (max-width: 414px) {
+	
+	.headphones {
+		width: 80px;
+		top: 55px;
+		right: 145px;
+	}
+
+
+
+	}

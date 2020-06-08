@@ -137,9 +137,10 @@
 	}
 
 	.nav-links li a:hover {
-		text-decoration: underline;
+		color: #DFDFDF;
 		background-color;
-		transition;
+		transition: ease 0.2s;
+
 	}
 
 
@@ -283,7 +284,7 @@
 		font-family: Montserrat;
 		text-align: center;
 		position: relative;
-		top: 113px;
+		top: 110px;
 		left: 16px;
 	}
 
