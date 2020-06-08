@@ -725,7 +725,7 @@ footer {
 
 
 	/*Fix for mobile*/
-	@media screen and (max-width: 883px) {
+	@media only screen and (max-width: 883px) {
 
 		.logo {
 		width: 100px;
@@ -811,7 +811,7 @@ footer {
 
 	}
 
-	@media screen and (max-width: 563px) {
+	@media only screen and (max-width: 563px) {
 
 /*	.logo {
 		width: 30px;
