@@ -35,177 +35,177 @@
 			opacity: 1;
 			-webkit-transform: none;
 			transform: none;
-		}*/
+			}*/
 
-		0% { opacity:0; }
-    	66% { opacity:0; }
-    	100% { opacity:1; }
+			0% { opacity:0; }
+			66% { opacity:0; }
+			100% { opacity:1; }
 
-	}
+		}
 
-	.logo {
-		margin: 0px auto 0px 30px;
-		
-		opacity: 0;
-		animation-delay: 1s;
-		animation-name: fadein;
-		animation-duration: 2s;
-		animation-fill-mode: forwards;
-		shape-rendering: crispEdges;
+		.logo {
+			margin: 0px auto 0px 30px;
+			
+			opacity: 0;
+			animation-delay: 1s;
+			animation-name: fadein;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+			shape-rendering: crispEdges;
 
-	}
+		}
 
-	.navbar h1 {
-		font-family: Source Sans Pro;
-		color: white;
-		font-size: 2rem;
+		.navbar h1 {
+			font-family: Source Sans Pro;
+			color: white;
+			font-size: 2rem;
 
-	
-
-
-	}
+			
 
 
-	.header-subtext {
-		color: white;
-		font-family: Montserrat;
-		font-size: 12px;
-		text-align: left;
-		position: relative;
-		bottom: 5px;
-		left: 100px;
-		width:120px;
-
-		opacity: 0;
-		animation-delay: 1s;
-		animation-name: fadein;
-		animation-duration: 2s;
-		animation-fill-mode: forwards;
-
-	}
-
-	header {
-		/*background-color: #292929;*/
-		position: relative;
-		top: 0;
-		z-index: 9999;
-		width: 100%;
-
-		opacity: 0;
-		animation-delay: 1s;
-		animation-name: fadein;
-		animation-duration: 2s;
-		animation-fill-mode: forwards;
- 
-	}
-
-	.navbar {
-
-		text-align: right;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		min-height: 10vh;
-		background-color;
-		
-	}
-
-	.nav-links {
-		margin: 0;
-		padding: 0;
-		display: flex;
-	/*	justify-content: space-around;*/
-		/*width: 30%;	*/
-	}
-
-	.nav-links li {
-		list-style: none;
-		margin: 0 30px;
-		
-	}
-
-	.nav-links li a {
-		font-family: Source Sans Pro;
-		font-weight: 200px;
-		color: white;
-		text-decoration: none;
-		font-size: 1rem;
-		display: block;
-		margin: 10px 0;
-		padding: 10px 20px;
-
-	}
-
-	.nav-links li a:hover {
-		color: #DFDFDF;
-		background-color;
-		transition: ease 0.2s;
-
-	}
+		}
 
 
-	.burger {
-		margin-right: 30px;
-		display: none;
-	}
+		.header-subtext {
+			color: white;
+			font-family: Montserrat;
+			font-size: 12px;
+			text-align: left;
+			position: relative;
+			bottom: 5px;
+			left: 100px;
+			width:120px;
 
-	.burger div{
-		background-color: white;
-		width: 25px;
-		height: 3px;
-		margin: 5px;
-		border-radius: 2px;
-		transition: all 0.3s ease;
+			opacity: 0;
+			animation-delay: 1s;
+			animation-name: fadein;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
 
-	}
+		}
 
-	.middle-container {
-		width: 700px;
-		height: 450px;
-		position: relative;
-		top: 60px;
-		text-align: center;
-		margin: 0 auto;
-		/*border: 1px solid white;*/
+		header {
+			/*background-color: #292929;*/
+			position: relative;
+			top: 0;
+			z-index: 9999;
+			width: 100%;
 
-	}
+			opacity: 0;
+			animation-delay: 1s;
+			animation-name: fadein;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+			
+		}
 
-	.middle {
+		.navbar {
 
-		height: 450px;
-		width: auto;
-		text-align: center;
-		top: 0px;
-		z-index: -1;
-		/*border: 1px solid white;*/
+			text-align: right;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			min-height: 10vh;
+			background-color;
+			
+		}
 
-	}
+		.nav-links {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			/*	justify-content: space-around;*/
+			/*width: 30%;	*/
+		}
+
+		.nav-links li {
+			list-style: none;
+			margin: 0 30px;
+			
+		}
+
+		.nav-links li a {
+			font-family: Source Sans Pro;
+			font-weight: 200px;
+			color: white;
+			text-decoration: none;
+			font-size: 1rem;
+			display: block;
+			margin: 10px 0;
+			padding: 10px 20px;
+
+		}
+
+		.nav-links li a:hover {
+			color: #DFDFDF;
+			background-color;
+			transition: ease 0.2s;
+
+		}
 
 
+		.burger {
+			margin-right: 30px;
+			display: none;
+		}
+
+		.burger div{
+			background-color: white;
+			width: 25px;
+			height: 3px;
+			margin: 5px;
+			border-radius: 2px;
+			transition: all 0.3s ease;
+
+		}
+
+		.middle-container {
+			width: 700px;
+			height: 450px;
+			position: relative;
+			top: 60px;
+			text-align: center;
+			margin: 0 auto;
+			/*border: 1px solid white;*/
+
+		}
+
+		.middle {
+
+			height: 450px;
+			width: auto;
+			text-align: center;
+			top: 0px;
+			z-index: -1;
+			/*border: 1px solid white;*/
+
+		}
 
 
 
-	.headphones {
-		width: 80px;
-		height: auto;
-		position: relative;
-		top: 50px;
-		right: 270px;
 
 
-		opacity:0;
-		animation-name: fadein;
-		animation-delay: 1s;
-		animation-duration: 2s;
-		animation-fill-mode: forwards;
-	}
+		.headphones {
+			width: 80px;
+			height: auto;
+			position: relative;
+			top: 50px;
+			right: 270px;
 
-	.phone {
-		width: 80px;
-		height: auto;
-		position: relative;
-		left: 200px;
-		bottom: 280px;
+
+			opacity:0;
+			animation-name: fadein;
+			animation-delay: 1s;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+		}
+
+		.phone {
+			width: 80px;
+			height: auto;
+			position: relative;
+			left: 200px;
+			bottom: 280px;
 		/*top: 173px;
 		right: 67px;*/
 
@@ -256,9 +256,9 @@
 		animation-delay: 1s;
 		animation-duration: 2s;
 		animation-fill-mode: forwards;
-	}*/
+		}*/
 
-	.login-button img {
+		.login-button img {
 	/*	width: 200px;
 		height: auto;
 		margin: 0 auto;
@@ -339,7 +339,7 @@
 
 
 	.title {
-	/*	padding-top: 70px;*/
+		/*	padding-top: 70px;*/
 		text-align: center;
 		/*display: flex;*/
 		font-family: Source Sans Pro;
@@ -351,7 +351,7 @@
 
 	#step-container {
 		position: relative;
-/*		top: 100px;*/
+		/*		top: 100px;*/
 	}
 
 
@@ -516,7 +516,7 @@
 
 
 
-footer {
+	footer {
 		/*height: 20%;*/
 		margin: 0 auto;
 		height: 110px;
@@ -526,7 +526,7 @@ footer {
 		right: 0;
 		bottom: 0;
 		width: 800px;
-*/		
+		*/		
 		background-color: #1f1f1f;
 		/*opacity: 0;*/
 	/*	animation-name: fadein;
@@ -607,126 +607,126 @@ footer {
 
 		/*HAMBURGER!!!!!!!!!*/
 		.nav-links {
-				position: absolute;
-				right: 0px;
-				height: 260px;
-				top: 63px;
-				background-color: #292929;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				width: 100%;
-				transform: translateY(-150%);
-				animation-name: fadein;
-				animation-duration: 1s;
-				transition: transform 0.15s ease-in;
-				/*border: 1px solid red;*/
-				z-index: 9999;
-			}
-	
+			position: absolute;
+			right: 0px;
+			height: 260px;
+			top: 63px;
+			background-color: #292929;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			transform: translateY(-150%);
+			animation-name: fadein;
+			animation-duration: 1s;
+			transition: transform 0.15s ease-in;
+			/*border: 1px solid red;*/
+			z-index: 9999;
+		}
+		
 		.nav-links {
 			text-align: center;
-	
-	
+			
+			
 		}
-	
+		
 		.nav-links li {
 			opacity: 0;
 			width: 100%;
 			padding-top:;
 			border-top: 1px solid grey;
-	
-	
+			
+			
 		}
-	
+		
 		.nav-links li:hover {
 			background-color: #2e2e2e;
 			transition: 0.2s ease-in;
 		}
-	
+		
 		.nav-links li a:hover {
 			text-decoration: none;
 		}
-	
+		
 		.burger {
 			display: block;
 			cursor: pointer;
 			z-index: 10000;
 		}
-	
+		
 		.nav-link-active {
 			transform: translateX(0%);
 		}
-	
+		
 		.navbar-background {
 			background-color: #292929;
 		/*	animation-name: fadein;
-			animation-duration: 0.3s;*/
-		}
+		animation-duration: 0.3s;*/
+	}
 	
-		.nav-active {
-			background-color: #292929;
+	.nav-active {
+		background-color: #292929;
 	/*		animation-name: fadein;
-			animation-duration: 2s;*/
-		}
+	animation-duration: 2s;*/
+}
+
+
+@keyframes fadein {
+	
+	0% { opacity:0; }
+	66% { opacity:0; }
+	100% { opacity:1; }
+	
+}
+
+@keyframes navLinkFade {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-5px, 6px);
 	
 	
-		@keyframes fadein {
+}
+
+.toggle .line2 {
+	opacity: 0;
 	
-			0% { opacity:0; }
-			66% { opacity:0; }
-			100% { opacity:1; }
+}
+
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
 	
-		}
-	
-		@keyframes navLinkFade {
-			from {
-				opacity: 0;
-				transform: translateY(50px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0px);
-			}
-		}
-	
-		.toggle .line1 {
-			transform: rotate(-45deg) translate(-5px, 6px);
-	
-	
-		}
-	
-		.toggle .line2 {
-			opacity: 0;
-			
-		}
-	
-		.toggle .line3 {
-			transform: rotate(45deg) translate(-5px, -6px);
-			
-		}
-	
-	
-		.final-footer {
-			width: 800px;
-			text-align: right;
-			margin: 0 auto;
-			position: relative;
-			top: 16px;
-		}
-	
-	
-	
-	
-	
-		}
+}
+
+
+.final-footer {
+	width: 800px;
+	text-align: right;
+	margin: 0 auto;
+	position: relative;
+	top: 16px;
+}
 
 
 
-	/*Fix for mobile*/
+
+
+}
+
+
+
+/*Fix for mobile*/
 @media only screen and (max-width: 883px) {
 
-		.logo {
+	.logo {
 		width: 100px;
 		height: auto;
 	}
@@ -808,35 +808,35 @@ footer {
 
 
 
-	}
+}
 
-	@media only screen and (max-width: 563px) {
+@media only screen and (max-width: 563px) {
 
 /*	.logo {
 		width: 30px;
-	}*/
-	.header-branding h1 {
-		font-size: 1rem;
-	}
+		}*/
+		.header-branding h1 {
+			font-size: 1rem;
+		}
 
-	.headphones {
-		width: 80px;
-		top: 55px;
-		right: 170px;
-	}
+		.headphones {
+			width: 80px;
+			top: 55px;
+			right: 170px;
+		}
 
-	.phone {
-		width: 80px;
-		left: 120px;
-		bottom: 320px;
+		.phone {
+			width: 80px;
+			left: 120px;
+			bottom: 320px;
 		/*top: 173px;
 		right: 67px;*/
 
 	}
 
-	}
+}
 
-	@media screen and (max-width: 414px) {
+@media screen and (max-width: 414px) {
 	
 	.headphones {
 		width: 80px;
@@ -846,6 +846,5 @@ footer {
 
 
 
-	}
+}
 
-	

@@ -1,14 +1,14 @@
 	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 
 
-html, body {
+	html, body {
 		background-image: url(/static/background7.png);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -21,21 +21,21 @@ html, body {
 
 	}
 
-h1 {
-	font-family: Source Sans Pro;
-	font-size: 3rem;
-	color: white;
-}
+	h1 {
+		font-family: Source Sans Pro;
+		font-size: 3rem;
+		color: white;
+	}
 
 
-@keyframes fadein {
+	@keyframes fadein {
 
 
-	0% { opacity:0; }
-	66% { opacity:0; }
-	100% { opacity:1; }
+		0% { opacity:0; }
+		66% { opacity:0; }
+		100% { opacity:1; }
 
-}
+	}
 
 	#container {
 		min-height: 100%;
@@ -67,7 +67,7 @@ h1 {
 		color: white;
 		font-size: 2rem;
 
-	
+		
 
 
 	}
@@ -103,7 +103,7 @@ h1 {
 		animation-name: fadein;
 		animation-duration: 2s;
 		animation-fill-mode: forwards;
- 
+		
 	}
 
 	.navbar {
@@ -121,7 +121,7 @@ h1 {
 		margin: 0;
 		padding: 0;
 		display: flex;
-	/*	justify-content: space-around;*/
+		/*	justify-content: space-around;*/
 		/*width: 30%;	*/
 	}
 
@@ -166,28 +166,28 @@ h1 {
 
 	}
 
-#middle {
-	height: 450px;
-	line-height: 450px;
-	text-align: center;
+	#middle {
+		height: 450px;
+		line-height: 450px;
+		text-align: center;
 
 
-}
+	}
 
-.buttons {
-	display: flex;
-	padding-top: 5vh;
-	margin: 0 auto;	
-	width: 50vh;
-}
+	.buttons {
+		display: flex;
+		padding-top: 5vh;
+		margin: 0 auto;	
+		width: 50vh;
+	}
 
-#button1, #button2 {
-	background-color: #292929;
-	margin: 0 auto;
-	height: 50px;
-	width: 150px;
-	border-radius: 2rem;
-	line-height: 50px;
+	#button1, #button2 {
+		background-color: #292929;
+		margin: 0 auto;
+		height: 50px;
+		width: 150px;
+		border-radius: 2rem;
+		line-height: 50px;
 	/*position: relative;
 	top: 30px;*/
 
@@ -257,7 +257,7 @@ footer {
 	text-decoration: none;
 	text-align: center;
 
-	}
+}
 
 
 
@@ -319,27 +319,27 @@ footer p {
 	border-top: 1px solid white;
 }
 
-	@media screen and (max-width: 1159px) {
+@media screen and (max-width: 1159px) {
 
 
 	/*HAMBURGER!!!!!!!!!*/
 	.nav-links {
-			position: absolute;
-			right: 0px;
-			height: 260px;
-			top: 63px;
-			background-color: #292929;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 100%;
-			transform: translateY(-150%);
-			animation-name: fadein;
-			animation-duration: 1s;
-			transition: transform 0.15s ease-in;
-			/*border: 1px solid red;*/
-			z-index: 9999;
-		}
+		position: absolute;
+		right: 0px;
+		height: 260px;
+		top: 63px;
+		background-color: #292929;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		transform: translateY(-150%);
+		animation-name: fadein;
+		animation-duration: 1s;
+		transition: transform 0.15s ease-in;
+		/*border: 1px solid red;*/
+		z-index: 9999;
+	}
 
 	.nav-links {
 		text-align: center;
@@ -378,72 +378,72 @@ footer p {
 	.navbar-background {
 		background-color: #292929;
 	/*	animation-name: fadein;
-		animation-duration: 0.3s;*/
-	}
+	animation-duration: 0.3s;*/
+}
 
-	.nav-active {
-		background-color: #292929;
+.nav-active {
+	background-color: #292929;
 /*		animation-name: fadein;
-		animation-duration: 2s;*/
-	}
+animation-duration: 2s;*/
+}
 
 
-	@keyframes fadein {
+@keyframes fadein {
 
-		0% { opacity:0; }
-    	66% { opacity:0; }
-    	100% { opacity:1; }
+	0% { opacity:0; }
+	66% { opacity:0; }
+	100% { opacity:1; }
 
-	}
+}
 
-	@keyframes navLinkFade {
-		from {
-			opacity: 0;
-			transform: translateY(50px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0px);
-		}
-	}
-
-	.toggle .line1 {
-		transform: rotate(-45deg) translate(-5px, 6px);
-
-
-	}
-
-	.toggle .line2 {
+@keyframes navLinkFade {
+	from {
 		opacity: 0;
-		
+		transform: translateY(50px);
 	}
-
-	.toggle .line3 {
-		transform: rotate(45deg) translate(-5px, -6px);
-		
+	to {
+		opacity: 1;
+		transform: translateY(0px);
 	}
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-5px, 6px);
 
 
-	.final-footer {
-		width: 800px;
-		text-align: right;
-		margin: 0 auto;
-		position: relative;
-		top: 16px;
-	}
+}
+
+.toggle .line2 {
+	opacity: 0;
+	
+}
+
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
+	
+}
+
+
+.final-footer {
+	width: 800px;
+	text-align: right;
+	margin: 0 auto;
+	position: relative;
+	top: 16px;
+}
 
 
 
 
 
-	}
+}
 
 
 
-	/*Fix for mobile*/
-	@media screen and (max-width: 883px) {
+/*Fix for mobile*/
+@media screen and (max-width: 883px) {
 
-		.logo {
+	.logo {
 		width: 100px;
 		height: auto;
 	}
@@ -525,35 +525,35 @@ footer p {
 
 
 
-	}
+}
 
-	@media screen and (max-width: 563px) {
+@media screen and (max-width: 563px) {
 
 /*	.logo {
 		width: 30px;
-	}*/
-	.header-branding h1 {
-		font-size: 1rem;
-	}
+		}*/
+		.header-branding h1 {
+			font-size: 1rem;
+		}
 
-	.headphones {
-		width: 80px;
-		top: 55px;
-		right: 170px;
-	}
+		.headphones {
+			width: 80px;
+			top: 55px;
+			right: 170px;
+		}
 
-	.phone {
-		width: 80px;
-		left: 120px;
-		bottom: 320px;
+		.phone {
+			width: 80px;
+			left: 120px;
+			bottom: 320px;
 		/*top: 173px;
 		right: 67px;*/
 
 	}
 
-	}
+}
 
-	@media screen and (max-width: 414px) {
+@media screen and (max-width: 414px) {
 	
 	.headphones {
 		width: 80px;
@@ -563,4 +563,4 @@ footer p {
 
 
 
-	}
+}
