@@ -601,131 +601,130 @@ footer {
 		border-top: 1px solid white;
 	}
 
-
 	/*Fix footer*/
-	@media screen and (max-width: 1159px) {
+	@media only screen and (max-width: 1159px) {
 
 
-	/*HAMBURGER!!!!!!!!!*/
-	.nav-links {
-			position: absolute;
-			right: 0px;
-			height: 260px;
-			top: 63px;
-			background-color: #292929;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			width: 100%;
-			transform: translateY(-150%);
-			animation-name: fadein;
-			animation-duration: 1s;
-			transition: transform 0.15s ease-in;
-			/*border: 1px solid red;*/
-			z-index: 9999;
+		/*HAMBURGER!!!!!!!!!*/
+		.nav-links {
+				position: absolute;
+				right: 0px;
+				height: 260px;
+				top: 63px;
+				background-color: #292929;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+				transform: translateY(-150%);
+				animation-name: fadein;
+				animation-duration: 1s;
+				transition: transform 0.15s ease-in;
+				/*border: 1px solid red;*/
+				z-index: 9999;
+			}
+	
+		.nav-links {
+			text-align: center;
+	
+	
 		}
-
-	.nav-links {
-		text-align: center;
-
-
-	}
-
-	.nav-links li {
-		opacity: 0;
-		width: 100%;
-		padding-top:;
-		border-top: 1px solid grey;
-
-
-	}
-
-	.nav-links li:hover {
-		background-color: #2e2e2e;
-		transition: 0.2s ease-in;
-	}
-
-	.nav-links li a:hover {
-		text-decoration: none;
-	}
-
-	.burger {
-		display: block;
-		cursor: pointer;
-		z-index: 10000;
-	}
-
-	.nav-link-active {
-		transform: translateX(0%);
-	}
-
-	.navbar-background {
-		background-color: #292929;
-	/*	animation-name: fadein;
-		animation-duration: 0.3s;*/
-	}
-
-	.nav-active {
-		background-color: #292929;
-/*		animation-name: fadein;
-		animation-duration: 2s;*/
-	}
-
-
-	@keyframes fadein {
-
-		0% { opacity:0; }
-    	66% { opacity:0; }
-    	100% { opacity:1; }
-
-	}
-
-	@keyframes navLinkFade {
-		from {
+	
+		.nav-links li {
 			opacity: 0;
-			transform: translateY(50px);
+			width: 100%;
+			padding-top:;
+			border-top: 1px solid grey;
+	
+	
 		}
-		to {
-			opacity: 1;
-			transform: translateY(0px);
+	
+		.nav-links li:hover {
+			background-color: #2e2e2e;
+			transition: 0.2s ease-in;
 		}
-	}
-
-	.toggle .line1 {
-		transform: rotate(-45deg) translate(-5px, 6px);
-
-
-	}
-
-	.toggle .line2 {
-		opacity: 0;
-		
-	}
-
-	.toggle .line3 {
-		transform: rotate(45deg) translate(-5px, -6px);
-		
-	}
-
-
-	.final-footer {
-		width: 800px;
-		text-align: right;
-		margin: 0 auto;
-		position: relative;
-		top: 16px;
-	}
-
-
-
-
-
-	}
+	
+		.nav-links li a:hover {
+			text-decoration: none;
+		}
+	
+		.burger {
+			display: block;
+			cursor: pointer;
+			z-index: 10000;
+		}
+	
+		.nav-link-active {
+			transform: translateX(0%);
+		}
+	
+		.navbar-background {
+			background-color: #292929;
+		/*	animation-name: fadein;
+			animation-duration: 0.3s;*/
+		}
+	
+		.nav-active {
+			background-color: #292929;
+	/*		animation-name: fadein;
+			animation-duration: 2s;*/
+		}
+	
+	
+		@keyframes fadein {
+	
+			0% { opacity:0; }
+			66% { opacity:0; }
+			100% { opacity:1; }
+	
+		}
+	
+		@keyframes navLinkFade {
+			from {
+				opacity: 0;
+				transform: translateY(50px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+		}
+	
+		.toggle .line1 {
+			transform: rotate(-45deg) translate(-5px, 6px);
+	
+	
+		}
+	
+		.toggle .line2 {
+			opacity: 0;
+			
+		}
+	
+		.toggle .line3 {
+			transform: rotate(45deg) translate(-5px, -6px);
+			
+		}
+	
+	
+		.final-footer {
+			width: 800px;
+			text-align: right;
+			margin: 0 auto;
+			position: relative;
+			top: 16px;
+		}
+	
+	
+	
+	
+	
+		}
 
 
 
 	/*Fix for mobile*/
-	@media only screen and (max-width: 883px) {
+@media only screen and (max-width: 883px) {
 
 		.logo {
 		width: 100px;
