@@ -240,7 +240,7 @@ html, body {
 		font-family: Source Sans Pro;
 		font-size;
 		color: white;
-		padding-top: 3vh;
+		padding-top: 1vh;
 
 		opacity:0;
 		animation-name: fadein;
@@ -297,10 +297,21 @@ html, body {
 
 	}
 
-	.options {
-		border:1px solid white;
+	#options {
 		font-family: Source Sans Pro;
-		padding-top: 10px;
+		width: 70px;
+		margin: 0 auto;
+		position: relative;
+		bottom: 17px;
+	}
+
+	#options a {
+		color: white;
+		text-decoration: none;
+	}
+
+	#options a:hover {
+		text-decoration: underline;
 	}
 
 	.modal {
@@ -313,7 +324,16 @@ html, body {
 		justify-content: center;
 		text-align: center;
 		align-items: center;
+		visibility: hidden;
 
+		opacity: 0;
+		transition: visibility 0s, opacity 0.2s;
+
+	}
+
+	.modal-active {
+		visibility: visible;
+		opacity: 1;
 	}
 	
 	.modal-content {
@@ -324,6 +344,16 @@ html, body {
 		bottom: 50px;
 		border-radius: 20px;
 		padding: 20px;
+	}
+
+	.close {
+		font-size: 3rem;
+		position: absolute;
+		top: 0;
+		right: 20px;
+		transform: rotate(45deg);
+		cursor: pointer;
+
 	}
 
 	#popup-logo {
@@ -350,6 +380,11 @@ html, body {
         margin: 0 auto;
         border-radius: 20px;
 		margin-top: 20px;
+		transition: 0.2s;
+    }
+
+    #button:hover {
+		opacity: 0.6;
     }
 
     #submit {
@@ -362,11 +397,7 @@ html, body {
 
 
     }
-
-    #submit:hover {
-        text-decoration: underline;
-    }
-
+	
 
 	#playlist-name {
     outline: none;

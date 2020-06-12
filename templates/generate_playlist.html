@@ -46,7 +46,7 @@
 						</div>
 					</div>
 				</div>
-				<p class="options"><a href="#">Advanced</a></p>
+				<p id="options"><a href="#">Advanced</a></p>
 				<p id="description"> The "level" designates how obscure the playlist will be. Generally, anywhere from 1 to 5 will contain artists relatively more mainstream and comfortable to the user, while levels higher and higher usually contain lesser known songs and are a great way of discovering new artsts. </p>
 				
 			</div>
@@ -69,13 +69,13 @@
 	</footer>
 	<div class="modal">
 					<div class="modal-content">
+						<div class="close">+</div>
 						<img src="/static/headphones.png" alt="" id="popup-logo">
 
 						<form id="playlist_info">
 			                <label id="name" for="playlist-name">Name<br><input type="text" id="playlist-name" maxlength="100" placeholder="Enter a playlist name (Optional)"><br></label>
 			                
-			                <label id="desc" for = "playlist-description">Description<br><textarea id="playlist-description" maxlength="230" placeholder="Enter a description (Optional)"></textarea></label>
-			                
+			                <label id="desc" for = "playlist-description">Description<br><textarea id="playlist-description" maxlength="230" placeholder="Enter a description (Optional)"></textarea></label> 
 			                <label><div id="button"><p><a href="" id="submit">Submit</a></p></div></label>
             			</form>
 
@@ -84,5 +84,6 @@
 
 
 	<script src="/static/app.js"></script>
+	<script src="/static/modal.js"></script>
 </body>
 </html>
