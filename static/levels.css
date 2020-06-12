@@ -100,7 +100,8 @@ html, body {
 	/*	position: relative;
 		top: 0;
 		z-index: 9999;
-		*/		width: 100%;
+		*/
+		width: 100%;
 
 		opacity: 0;
 		animation-delay: 1s;
@@ -197,7 +198,7 @@ html, body {
 	::placeholder {
 		font-family: Source Sans Pro;
 		font-weight: 100;
-		font-size: 20px;
+		font-size: 15px;
 
 	}
 
@@ -293,6 +294,101 @@ html, body {
 		animation-name: fadein;
 		animation-duration: 2s;
 		animation-fill-mode: forwards;
+
+	}
+
+	.options {
+		border:1px solid white;
+		font-family: Source Sans Pro;
+		padding-top: 10px;
+	}
+
+	.modal {
+		background-color: rgba(0, 0, 0, 0.5);
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+
+	}
+	
+	.modal-content {
+		height: 400px;
+		width: 400px;
+		background-color: white;
+		position: relative;
+		bottom: 50px;
+		border-radius: 20px;
+		padding: 20px;
+	}
+
+	#popup-logo {
+		width: 10%;
+		height: auto;
+	}
+/*
+	#playlist_info {
+		text-align: left;
+	}
+*/
+
+	label,input {
+		font-family: Source Sans Pro;
+        margin-bottom: 20px;
+	}
+
+   #button {
+        background-color: #292929;
+        width: 100px;
+        height: 40px;
+        align-items: center;
+        line-height: 35px;
+        margin: 0 auto;
+        border-radius: 20px;
+		margin-top: 20px;
+    }
+
+    #submit {
+    font-size: 20px;
+    color: white;
+    font-family: Source Sans Pro;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+
+
+    }
+
+    #submit:hover {
+        text-decoration: underline;
+    }
+
+
+	#playlist-name {
+    outline: none;
+    height: 4vh;
+    width: 40vh;
+    border: 1px solid rgba(136,136,136, .5);
+    border-radius: 7px;
+	
+	}
+
+	#playlist-description {
+	    height: 20vh;
+	    width: 40vh;
+	    font-family: Source Sans Pro;
+	    font-size: 1rem;
+	    outline: none;
+	    border: 1px solid rgba(136,136,136, .5);
+	    border-radius: 7px;
+	    resize: none;
+	/*    position: relative;
+	    top: 20px;*/
+	    padding: 10px;
 
 	}
 
