@@ -84,7 +84,7 @@ def get_obscure_artist(artist_id, levels, spotifyObject):
     return finalid
 
 
-def generate(token, levels):
+def generate(token, levels, name, desc):
 
     spotifyObject = spotipy.Spotify(auth=token)
 
@@ -116,8 +116,20 @@ def generate(token, levels):
         track_ids.append(track['id'])
 
     # Put recommended songs into playlist
+
+    playlist_name = "Surprisify playlist for {}".format('first_name')
+    playlist_desc = "{} level(s) deep".format('levels')
+
+    if name:
+        playlist_name = name
+
+    if desc:
+        playlist_desc = "{} / {} level(s) deep, made in Surprisify".format(
+            desc, levels)
+
     recommended_playlist = spotifyObject.user_playlist_create(
-        user_id, ("Surprisify playlist for {}".format(first_name)), description=("{} level(s) deep").format(levels))
+        user_id, playlist_name, description=playlist_desc)
+
     recommended_playlist_id = recommended_playlist['id']
     spotifyObject.user_playlist_add_tracks(
         user_id, recommended_playlist_id, track_ids)

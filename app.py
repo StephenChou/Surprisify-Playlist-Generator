@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session
+from flask import Flask, request, render_template, redirect, url_for, session, jsonify
 import os
 from spotify_actions import req_auth, req_token, generate
 from whitenoise import WhiteNoise
@@ -67,9 +67,13 @@ def callback():
 def generate_playlist():
 
     if request.method == 'POST':
-        levels = int(float(request.form['level']))
-        token = session.get("token", None)
-        generate(token, levels)
+
+        pl_name = session.get('pl_name')
+        pl_desc = session.get('pl_desc')
+        token = session.get('token')
+        level = int(float(request.form.get('level')))
+
+        generate(token, level, pl_name, pl_desc)
 
         return redirect(url_for('success'))
 
@@ -78,6 +82,21 @@ def generate_playlist():
             return render_template('generate_playlist.html', title='generate playlist')
         else:
             return redirect(url_for('home'))
+
+# Update modal form
+
+
+@app.route('/update', methods=["POST"])
+def update():
+
+    if request.method == 'POST':
+        pl_name = request.form.get('name')
+        pl_desc = request.form.get('desc')
+
+        session['pl_name'] = pl_name
+        session['pl_desc'] = pl_desc
+
+        return jsonify({'result': 'success'})
 
 # Success landing page
 

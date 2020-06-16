@@ -97,10 +97,9 @@ html, body {
 
 		header {
 			/*background-color: #292929;*/
-	/*	position: relative;
+		position: relative;
 		top: 0;
 		z-index: 9999;
-		*/
 		width: 100%;
 
 		opacity: 0;
@@ -175,7 +174,7 @@ html, body {
 		display: flex;
 	}
 
-	input {
+	#levels-btn {
 		height: 50px;
 		width: 200px;
 		text-align: center;
@@ -188,7 +187,7 @@ html, body {
 
 	}
 
-	input:hover {
+	#levels-btn:hover {
 		/*border: 1px solid red;
 		border-radius: 20px;*/
 		/*border-bottom: 3px solid green ;*/
@@ -360,11 +359,7 @@ html, body {
 		width: 10%;
 		height: auto;
 	}
-/*
-	#playlist_info {
-		text-align: left;
-	}
-*/
+
 
 	label,input {
 		font-family: Source Sans Pro;
@@ -400,11 +395,13 @@ html, body {
 	
 
 	#playlist-name {
+	font-size: 1rem;
     outline: none;
     height: 4vh;
     width: 40vh;
     border: 1px solid rgba(136,136,136, .5);
     border-radius: 7px;
+    padding: 10px;
 	
 	}
 
@@ -421,6 +418,25 @@ html, body {
 	    top: 20px;*/
 	    padding: 10px;
 
+	}
+
+	#pl_submit {
+		background-color: #292929;
+		font-family: Source Sans Pro;
+		color: white;
+		font-size: 1.1rem;
+		border: none;
+		border-radius: 20px;
+		width: 90px;
+		height: 30px;
+		position: relative;
+		top: 20px;
+		opacity: 1;
+		transition: 0.1s;
+	}
+
+	#pl_submit:hover {
+		opacity: 0.6;
 	}
 
 
@@ -666,44 +682,20 @@ animation-duration: 2s;*/
 		width: auto;
 	}
 
-
-
-	.steps {
-		display: block;
-		margin: 0;
-		/*border: 1px solid white;*/
-		padding-top: 100px;
-		padding-bottom: 100px;
-
-
-	}
-
-	.step {
-
-
-		/*flex: 1;*/
+	
+	.modal-content {
 		width: 300px;
-		/*height: 400px;*/
-		height: auto;
-		margin: 0 auto;
-		text-align: center;
-
 	}
 
-	#step1, #step2 {
-		border-right: 0px solid white;
-		border-bottom: 1px solid white;
+	#playlist-name {
+		width: 30vh;
+	}
+
+	#playlist-desc {
+		width: 30vh;
 	}
 
 
-	.about-page{
-		width: 100%;
-		height: auto;
-		/*height: auto;*/
-		position: relative;
-		text-align: center;
-
-	}
 
 	footer {
 		margin-top: 80px;
@@ -772,6 +764,7 @@ animation-duration: 2s;*/
 
 @media screen and (max-width: 414px) {
 	
+
 	.headphones {
 		width: 80px;
 		top: 55px;
