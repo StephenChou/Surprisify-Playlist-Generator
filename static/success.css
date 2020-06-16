@@ -188,15 +188,18 @@
 		width: 150px;
 		border-radius: 2rem;
 		line-height: 50px;
+		opacity: 1;
+
 	/*position: relative;
 	top: 30px;*/
 
 	opacity: 0;
 	animation-name: fadein;
-	animation-delay: 1s;
+	animation-delay: 0.5s;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
 }
+
 
 
 #middle_text {
@@ -209,7 +212,7 @@
 	opacity: 0;
 	animation-name: fadein;
 	animation-delay: 0s;
-	animation-duration: 2s;
+	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
 
 }
@@ -225,7 +228,7 @@
 	font-family: Source Sans Pro;
 	text-align: center;
 	position: relative;
-	top: 1.3vh;
+	top: 1.5vh;
 	font-size: 1rem;
 	font-weight: 400px;
 	color: white;

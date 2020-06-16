@@ -117,8 +117,8 @@ def generate(token, levels, name, desc):
 
     # Put recommended songs into playlist
 
-    playlist_name = "Surprisify playlist for {}".format('first_name')
-    playlist_desc = "{} level(s) deep".format('levels')
+    playlist_name = "Surprisify playlist for {}".format(first_name)
+    playlist_desc = "{} level(s) deep".format(levels)
 
     if name:
         playlist_name = name
