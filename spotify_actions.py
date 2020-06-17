@@ -12,6 +12,8 @@ import datetime
 
 client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
+redirect_uri = os.environ.get('REDIRECT_URI')
+
 state = ''.join(random.choice(string.ascii_lowercase + string.digits)
                 for n in range(8))
 scope = 'user-top-read user-library-read playlist-modify-public'
@@ -21,7 +23,7 @@ def req_auth():
 
     show_dialog = "false"
 
-    AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote("http://localhost:5000/callback")}&show_dialog={show_dialog}&state={state}&scope={scope}'
+    AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote(redirect_uri)}&show_dialog={show_dialog}&state={state}&scope={scope}'
     return AUTH_FIRST_URL
 
 
