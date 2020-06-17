@@ -21,7 +21,7 @@ scope = 'user-top-read user-library-read playlist-modify-public'
 
 def req_auth():
 
-    show_dialog = "false"
+    show_dialog = "true"
 
     AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote(redirect_uri)}&show_dialog={show_dialog}&state={state}&scope={scope}'
     return AUTH_FIRST_URL
@@ -50,22 +50,27 @@ def req_token(code):
         'https://accounts.spotify.com/api/token', data=token_data, headers=token_header)
 
     # Checking if token is still valid, otherwise, refresh
-    now = datetime.datetime.now()
-    expires_in = token_json.json()['expires_in']
-    expires = now + datetime.timedelta(seconds=expires_in)
 
-    if now > expires:
+    if "expires_in" in token_json.json():
 
-        refresh_token_data = {
-            "grant_type": "refresh_token",
-            "refresh_token": token_json.json()['refresh_token']
-        }
+        now = datetime.datetime.now()
+        expires_in = token_json.json()['expires_in']
+        expires = now + datetime.timedelta(seconds=expires_in)
 
-        refresh_token_json = requests.post(
-            'https://accounts.spotify.com/api/token', data=refresh_token_data, headers=token_header)
-        token = refresh_token_json.json()['access_token']
+        if now > expires:
 
-        return token
+            refresh_token_data = {
+                "grant_type": "refresh_token",
+                "refresh_token": token_json.json()['refresh_token']
+            }
+
+            refresh_token_json = requests.post(
+                'https://accounts.spotify.com/api/token', data=refresh_token_data, headers=token_header)
+            token = refresh_token_json.json()['access_token']
+
+            return token
+        else:
+            token = token_json.json()['access_token']
     else:
 
         token = token_json.json()['access_token']
