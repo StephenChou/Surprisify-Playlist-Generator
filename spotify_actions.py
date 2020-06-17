@@ -21,7 +21,7 @@ scope = 'user-top-read user-library-read playlist-modify-public'
 
 def req_auth():
 
-    show_dialog = "true"
+    show_dialog = "false"
 
     AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote(redirect_uri)}&show_dialog={show_dialog}&state={state}&scope={scope}'
     return AUTH_FIRST_URL
@@ -37,7 +37,7 @@ def req_token(code):
     token_data = {
         "grant_type": "authorization_code",
         "code": code,
-        "redirect_uri": "http://localhost:5000/callback"
+        "redirect_uri": redirect_uri
     }
 
     # Token header
