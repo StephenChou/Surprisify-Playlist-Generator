@@ -11,7 +11,7 @@ App Config
 
 
 app = Flask(__name__)
-app.secret_key = os.urandom(16)
+app.secret_key = os.environ.get('SESSION_SECRET')
 app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
 
