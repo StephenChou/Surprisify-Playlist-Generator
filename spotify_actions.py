@@ -13,7 +13,6 @@ import datetime
 client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
 redirect_uri = os.environ.get('REDIRECT_URI')
-state = os.environ.get('STATE')
 
 scope = 'user-top-read user-library-read playlist-modify-public'
 
@@ -22,7 +21,7 @@ def req_auth():
 
     show_dialog = "false"
 
-    AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote(redirect_uri)}&show_dialog={show_dialog}&state={state}&scope={scope}'
+    AUTH_FIRST_URL = f'https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={quote(redirect_uri)}&show_dialog={show_dialog}&scope={scope}'
     return AUTH_FIRST_URL
 
 
