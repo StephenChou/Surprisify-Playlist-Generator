@@ -13,9 +13,8 @@ import datetime
 client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
 redirect_uri = os.environ.get('REDIRECT_URI')
+state = os.environ.get('STATE')
 
-state = ''.join(random.choice(string.ascii_lowercase + string.digits)
-                for n in range(8))
 scope = 'user-top-read user-library-read playlist-modify-public'
 
 
