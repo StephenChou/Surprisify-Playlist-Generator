@@ -71,6 +71,7 @@ def req_token(code):
             return token
         else:
             token = token_json.json()['access_token']
+            return token
     else:
 
         token = token_json.json()['access_token']
