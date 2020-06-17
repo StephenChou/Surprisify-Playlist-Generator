@@ -47,7 +47,6 @@ pl_name.addEventListener('keypress', function(event) {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.classList.remove('modal-active');
-        pl_name.value = "";
-        pl_desc.value = "";
+
     }
 }
