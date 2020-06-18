@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for, session, jsonify
 import os
 from spotify_actions import req_auth, req_token, generate
+from flask_sqlalchemy import SQLAlchemy
 from whitenoise import WhiteNoise
 
 '''
@@ -13,6 +14,18 @@ App Config
 app = Flask(__name__)
 app.secret_key = os.environ.get('SESSION_SECRET')
 app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
+
+# SQL database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+db = SQLAlchemy(app)
+
+
+class User(db.Model):
+    num_id = db.Column(db.Integer, primary_key=True)
+    sp_id = db.Column(db.String(22), unique=True, nullable=False)
+
+    def __repr__(self):
+        return f'[{self.num_id}] -> {self.sp_id}'
 
 
 '''
@@ -135,4 +148,4 @@ def privacy():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='192.168.1.29', port='5000')
