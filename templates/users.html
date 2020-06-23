@@ -1,0 +1,22 @@
+{% block content %}
+<style>
+    table, tr, th, td {
+        border: 1px solid black;
+    }
+</style>
+<h1>Users:</h1>
+<table>
+    <tr>
+        <th>Spotify ID</th>
+        <th>First name</th>
+        <th>Playlist ID</th>
+        {%for user in values%}
+            <tr>
+                <td>{{user.spotify_id}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.playlist_id}}</td>
+            </tr>
+        {% endfor %}
+    </tr>
+</table>
+{% endblock %}

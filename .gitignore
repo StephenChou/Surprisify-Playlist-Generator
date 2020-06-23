@@ -4,3 +4,4 @@ __pycache__
 authenticate.pyc
 .DS_store
 secret_vars.py
+site.db

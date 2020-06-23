@@ -8,7 +8,7 @@
 
 	}
 
-	body {
+	html, body {
 		background-image: url(/static/background7.png);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -831,6 +831,7 @@
 			bottom: 320px;
 		/*top: 173px;
 		right: 67px;*/
+		
 
 	}
 

@@ -17,15 +17,23 @@ app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
 # SQL database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+
 db = SQLAlchemy(app)
+db.app = app
 
 
-class User(db.Model):
-    num_id = db.Column(db.Integer, primary_key=True)
-    sp_id = db.Column(db.String(22), unique=True, nullable=False)
+class users(db.Model):
+    spotify_id = db.Column(db.String(22), primary_key=True)
+    playlist_id = db.Column(db.String(22), unique=True, nullable=False)
+    first_name = db.Column(db.String(20), unique=False, nullable=True)
+
+    def __init__(self, usr_id, pl_id, f_name):
+        self.spotify_id = usr_id
+        self.playlist_id = pl_id
+        self.first_name = f_name
 
     def __repr__(self):
-        return f'[{self.num_id}] -> {self.sp_id}'
+        return f'[{self.spotify_id}] -> {self.playlist_id} -> {self.first_name}'
 
 
 '''
@@ -49,7 +57,7 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-
+    session.clear()
     # Redirect user to Spotify login page
     AUTH_FIRST = req_auth()
     return redirect(AUTH_FIRST)
@@ -93,7 +101,23 @@ def generate_playlist():
 
         # Using token from earlier, generate playlist
         token = session.get('token')
-        generate(token, level, pl_name, pl_desc)
+
+        user_info = generate(token, level, pl_name, pl_desc)
+
+        user_spotify_id = str(user_info[0])
+        user_playlist_id = str(user_info[1])
+        user_first_name = str(user_info[2])
+
+        found_user = users.query.filter_by(spotify_id=user_spotify_id).first()
+
+        if found_user:
+            found_user.playlist_id = user_playlist_id
+            db.session.commit()
+
+        else:
+            user = users(user_spotify_id, user_playlist_id, user_first_name)
+            db.session.add(user)
+            db.session.commit()
 
         return redirect(url_for('success'))
 
@@ -131,6 +155,13 @@ def update():
         return redirect(url_for('home'))
 
 
+# View user ID's
+
+@app.route('/users')
+def user_list():
+    return render_template('users.html', values=users.query.all())
+
+
 # Success landing page
 
 
@@ -148,4 +179,7 @@ def privacy():
 
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.29', port='5000')
+    # db.reflect()
+    # db.drop_all()
+    db.create_all()
+    app.run()

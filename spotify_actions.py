@@ -140,3 +140,5 @@ def generate(token, levels, name, desc):
     recommended_playlist_id = recommended_playlist['id']
     spotifyObject.user_playlist_add_tracks(
         user_id, recommended_playlist_id, track_ids)
+
+    return [user_id, recommended_playlist_id, first_name]
