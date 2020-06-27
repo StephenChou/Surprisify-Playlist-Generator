@@ -15,8 +15,20 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SESSION_SECRET')
 app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
+ENV = 'dev'
+
+if ENV == 'dev':
+    app.debug = True
+    app.config[
+        'SQLALCHEMY_DATABASE_URI'] = ''
+else:
+    debug = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 # SQL database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 db = SQLAlchemy(app)
 db.app = app
@@ -39,7 +51,7 @@ class users(db.Model):
 '''
 
 Views
-
+ 
 '''
 
 
