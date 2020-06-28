@@ -4,6 +4,7 @@ var submit_btn = document.getElementById('pl_submit');
 var pl_name = document.getElementById('playlist-name');
 var pl_desc = document.getElementById('playlist-description');
 var modal = document.querySelector('.modal');
+var levels_btn = document.getElementById('levels-btn');
 
 
 
@@ -17,6 +18,7 @@ close_btn.addEventListener('click', ()=> {
     pl_desc.value = "";
 
 });
+
 
 
 $(document).ready(function() {
@@ -34,9 +36,32 @@ $(document).ready(function() {
 
     });
 
+    $('#generate-btn').on('click', ()=> {
+        
+        var levels = $('#levels-btn').val();
+
+        if (levels) {
+            req = $.ajax({
+                url : '/generate_playlist',
+                type : 'POST',
+                data : {level : levels}
+            }); 
+
+            window.location = "/success";
+
+        }
+            
+
+    });
+
 });
 
+// levels_btn.addEventListener('keypress', function(event) {
+//         if (event.keyCode == 13) {
+//             event.preventDefault();
+//         }
 
+// });
 
 pl_name.addEventListener('keypress', function(event) {
         if (event.keyCode == 13) {

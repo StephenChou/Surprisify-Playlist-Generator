@@ -116,22 +116,21 @@ def generate_playlist():
 
         user_info = generate(token, level, pl_name, pl_desc)
 
-        user_spotify_id = str(user_info[0])
-        user_playlist_id = str(user_info[1])
-        user_first_name = str(user_info[2])
-
-        found_user = users.query.filter_by(spotify_id=user_spotify_id).first()
-
-        if found_user:
-            found_user.playlist_id = user_playlist_id
-            db.session.commit()
-
-        else:
-            user = users(user_spotify_id, user_playlist_id, user_first_name)
-            db.session.add(user)
-            db.session.commit()
-
         return redirect(url_for('success'))
+        # user_spotify_id = str(user_info[0])
+        # user_playlist_id = str(user_info[1])
+        # user_first_name = str(user_info[2])
+
+        # found_user = users.query.filter_by(spotify_id=user_spotify_id).first()
+
+        # if found_user:
+        #     found_user.playlist_id = user_playlist_id
+        #     db.session.commit()
+
+        # else:
+        #     user = users(user_spotify_id, user_playlist_id, user_first_name)
+        #     db.session.add(user)
+        #     db.session.commit()
 
     else:
         if session.get('token'):
@@ -193,5 +192,5 @@ def privacy():
 if __name__ == '__main__':
     # db.reflect()
     # db.drop_all()
-    db.create_all()
-    app.run()
+    # db.create_all()
+    app.run(debug=True)

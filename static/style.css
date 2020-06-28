@@ -8,7 +8,7 @@
 
 	}
 
-	html, body {
+	body {
 		background-image: url(/static/background7.png);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -20,6 +20,10 @@
 		scroll-behavior: smooth;
 		overflow-x: hidden;
 
+	}
+
+	html {
+		overflow-x: hidden;
 	}
 
 	
@@ -288,7 +292,7 @@
 		left: 16px;
 	}
 
-	.login-button a {		
+	#login-link {		
 		text-decoration: none;
 		color: white;
 
@@ -304,7 +308,7 @@
 
 	}
 
-	.login-button a:hover {
+	#login-link:hover {
 		text-decoration: underline;
 	}
 
