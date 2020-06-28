@@ -4,13 +4,16 @@ var submit_btn = document.getElementById('pl_submit');
 var pl_name = document.getElementById('playlist-name');
 var pl_desc = document.getElementById('playlist-description');
 var modal = document.querySelector('.modal');
+var levels_btn = document.getElementById('levels-btn');
+var generate_btn = document.getElementById('generate-btn');
 
 
-
+// Button for opening modal
 open_btn.addEventListener('click', ()=> {
     modal.classList.add('modal-active');
 });
 
+// Button for closing modal
 close_btn.addEventListener('click', ()=> {
     modal.classList.remove('modal-active');
     pl_name.value = "";
@@ -20,12 +23,15 @@ close_btn.addEventListener('click', ()=> {
 
 
 $(document).ready(function() {
+
+    // Submit custom playlist name and/or description to backend page
     $('#pl_submit').on('click', ()=> {
         event.preventDefault();
         modal.classList.remove('modal-active');
         var name = $('#playlist-name').val();
         var desc = $('#playlist-description').val();
 
+        // Post custom name/desc form data
         req = $.ajax({
             url : '/update',
             type : 'POST',
@@ -34,23 +40,55 @@ $(document).ready(function() {
 
     });
 
+    // If user hits the enter key, disable generate button to avoid double generation
+    $('levels-btn').bind('keypress', function(event) {
+        if (event.keyCode == 13) {
+            $('#generate-btn').prop('disabled', true);
+        }
+    });
+
+    // If user hits generate button, disable enter key to avoid double generation
+    $('#generate-btn').on('click', ()=> {
+        
+        // disable input text so it can't be changed while generating
+        $('levels-btn').prop('disabled', true);
+
+        var levels = $('#levels-btn').val();
+        
+        // Post level data
+        if (levels) {
+            req = $.ajax({
+                url : '/generate_playlist',
+                type : 'POST',
+                data : {level : levels}
+            }); 
+
+            window.location = "/success";
+
+        }
+            
+
+    });
+
+
+
 });
 
-
-
+// Prevent posting
 pl_name.addEventListener('keypress', function(event) {
         if (event.keyCode == 13) {
             event.preventDefault();
         }
     });
 
+// Prevent posting
 pl_desc.addEventListener('keypress', function(event) {
         if (event.keyCode == 13) {
             event.preventDefault();
         }
     });
 
-
+// Ability to click outside of modal to close
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.classList.remove('modal-active');

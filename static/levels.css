@@ -247,7 +247,26 @@ html, body {
 		animation-duration: 2s;
 		animation-fill-mode: forwards;
 	}
-
+	
+	#generate-btn {
+		background-color: #292929;
+		text-align: center;
+		font-family: Source Sans Pro;
+		color: white;
+		align-items: center;
+		width: 100px;
+		line-height: 40px;
+		border-radius: 20px;
+		margin: 0 auto;
+		margin-bottom: 15px;
+		cursor: pointer;
+		opacity: 1;
+		transition: 0.2s;
+	}
+	
+	#generate-btn:hover {
+		opacity: 0.8;
+	}
 
 
 
