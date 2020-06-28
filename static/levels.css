@@ -555,7 +555,7 @@ top: 278px;*/
 		.nav-links {
 			position: absolute;
 			right: 0px;
-			height: 245px;
+			height: auto;
 			top: 63px;
 			background-color: #292929;
 			display: flex;

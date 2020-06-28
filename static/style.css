@@ -292,7 +292,7 @@
 		left: 16px;
 	}
 
-	.login-button a {		
+	#login-link {		
 		text-decoration: none;
 		color: white;
 
@@ -308,7 +308,7 @@
 
 	}
 
-	.login-button a:hover {
+	#login-link:hover {
 		text-decoration: underline;
 	}
 
@@ -613,7 +613,7 @@
 		.nav-links {
 			position: absolute;
 			right: 0px;
-			height: 260px;
+			height: auto;
 			top: 63px;
 			background-color: #292929;
 			display: flex;
