@@ -661,6 +661,22 @@ animation-duration: 2s;*/
 	top: 16px;
 }
 
+.middle-container {
+		width: auto;
+	}
+
+	
+	.modal-content {
+		width: 300px;
+	}
+
+	#playlist-name {
+		width: 250px;
+	}
+
+	#playlist-desc {
+		width: 30vh;
+	}
 
 
 
