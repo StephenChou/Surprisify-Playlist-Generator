@@ -40,19 +40,10 @@ $(document).ready(function() {
 
     });
 
-    // If user hits the enter key, disable generate button to avoid double generation
-    $('levels-btn').bind('keypress', function(event) {
-        if (event.keyCode == 13) {
-            $('#generate-btn').prop('disabled', true);
-        }
-    });
 
     // If user hits generate button, disable enter key to avoid double generation
     $('#generate-btn').on('click', ()=> {
         
-        // disable input text so it can't be changed while generating
-        $('levels-btn').prop('disabled', true);
-
         var levels = $('#levels-btn').val();
         
         // Post level data
