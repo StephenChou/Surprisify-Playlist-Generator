@@ -33,9 +33,8 @@ $(document).ready(function() {
 
         // Post custom name/desc form data
         req = $.ajax({
-            url : 'https://www.surprisify.me/generate_playlist/',
+            url : '/generate_playlist/',
             type : 'POST',
-            dataType : 'jsonp',
             data : { name : name, desc : desc}
         });        
 
@@ -50,9 +49,8 @@ $(document).ready(function() {
         // Post level data
         if (levels) {
             req = $.ajax({
-                url : 'https://www.surprisify.me/generate_playlist/',
+                url : '/generate_playlist/',
                 type : 'POST',
-                dataType : 'jsonp',
                 data : {level : levels}
             }); 
 
