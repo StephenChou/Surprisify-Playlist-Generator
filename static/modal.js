@@ -33,7 +33,7 @@ $(document).ready(function() {
 
         // Post custom name/desc form data
         req = $.ajax({
-            url : '/update',
+            url : '/update/',
             type : 'POST',
             data : { name : name, desc : desc}
         });        
@@ -49,7 +49,7 @@ $(document).ready(function() {
         // Post level data
         if (levels) {
             req = $.ajax({
-                url : '/generate_playlist',
+                url : '/generate_playlist/',
                 type : 'POST',
                 data : {level : levels}
             }); 
