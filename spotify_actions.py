@@ -12,8 +12,8 @@ import datetime
 
 client_id = os.environ.get("CLIENT_ID")
 client_secret = os.environ.get("CLIENT_SECRET")
-# redirect_uri = os.environ.get('REDIRECT_URI')
-redirect_uri = 'http://localhost:5000/callback'
+redirect_uri = os.environ.get('REDIRECT_URI')
+# redirect_uri = 'http://localhost:5000/callback'
 
 scope = 'user-top-read user-library-read playlist-modify-public'
 
