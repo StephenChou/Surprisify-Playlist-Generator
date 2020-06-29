@@ -57,7 +57,7 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-
+    session.clear()
     # Redirect user to Spotify login page
     AUTH_FIRST = req_auth()
     return redirect(AUTH_FIRST)
