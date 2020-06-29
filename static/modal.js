@@ -35,6 +35,7 @@ $(document).ready(function() {
         req = $.ajax({
             url : '/update/',
             type : 'POST',
+            dataType : 'jsonp',
             data : { name : name, desc : desc}
         });        
 
@@ -51,6 +52,7 @@ $(document).ready(function() {
             req = $.ajax({
                 url : '/generate_playlist/',
                 type : 'POST',
+                dataType : 'jsonp',
                 data : {level : levels}
             }); 
 
