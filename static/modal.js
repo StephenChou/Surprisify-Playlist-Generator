@@ -33,7 +33,7 @@ $(document).ready(function() {
 
         // Post custom name/desc form data
         req = $.ajax({
-            url : '/generate_playlist/',
+            url : '/update/',
             type : 'POST',
             data : { name : name, desc : desc}
         });        
