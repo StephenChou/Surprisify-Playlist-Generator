@@ -122,6 +122,8 @@ def generate_playlist():
 
     else:
         if session.get('token'):
+            session.pop('pl_name', None)
+            session.pop('pl_desc', None)
 
             # Load playlist generator page
             return render_template('generate_playlist.html', title='generate playlist')
