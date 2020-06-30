@@ -34,7 +34,7 @@ $(document).ready(function() {
         // Post custom name/desc form data
         req = $.ajax({
             url : '/update/',
-            type : 'POST',
+            method : 'POST',
             data : { name : name, desc : desc}
         });        
 
@@ -50,11 +50,11 @@ $(document).ready(function() {
         if (levels) {
             req = $.ajax({
                 url : '/generate_playlist/',
-                type : 'POST',
+                method : 'POST',
                 data : {level : levels}
             }); 
 
-            window.location = "/success";
+            window.location = "/success/";
 
         }
             
