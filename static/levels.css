@@ -259,7 +259,7 @@ html, body {
 		height: 40px;
 		border: none;
 		border-radius: 20px;
-		outline: none;
+		appearance: none;
 		-webkit-appearance: none;
 		opacity: 1;
 		transition: 0.2s;
@@ -409,6 +409,8 @@ html, body {
     text-decoration: none;
     display: inline-block;
     vertical-align: middle;
+	appearance: none;
+	-webkit-appearance: none;
 
 
     }
