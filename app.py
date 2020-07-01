@@ -121,7 +121,7 @@ def generate_playlist():
             db.session.add(user)
             db.session.commit()
 
-        return redirect(url_for('success'), playlist_id=user_playlist_id)
+        return redirect(url_for('success'))
 
     else:
         if session.get('token'):
