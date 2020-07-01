@@ -124,13 +124,13 @@ def generate(token, levels, name, desc):
     # Put recommended songs into playlist
 
     playlist_name = "Surprisify playlist for {}".format(first_name)
-    playlist_desc = "{} level(s) deep".format(levels)
+    playlist_desc = "{} level(s) deep / surprisify.me".format(levels)
 
     if name:
         playlist_name = name
 
     if desc:
-        playlist_desc = "{} / {} level(s) deep, made in Surprisify".format(
+        playlist_desc = "{} / {} level(s) deep, made in surprisify.me".format(
             desc, levels)
 
     recommended_playlist = spotifyObject.user_playlist_create(
