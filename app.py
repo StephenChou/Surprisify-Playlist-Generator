@@ -107,6 +107,9 @@ def generate_playlist():
         user_spotify_id = str(user_info[1])
         user_playlist_id = str(user_info[2])
 
+        # Store playlist ID in session
+        session['user_pl_id'] = user_playlist_id
+
         found_user = users.query.filter_by(spotify_id=user_spotify_id).first()
 
         if found_user:
@@ -161,7 +164,12 @@ def update():
 
 @app.route('/success')
 def success():
-    return render_template('success.html', title='success')
+
+    if session.get('user_pl_id'):
+        playlist_id = session.get('user_pl_id')
+        return render_template('success.html', pl_id=playlist_id)
+    else:
+        return redirect(url_for('home'))
 
 
 # Success landing page

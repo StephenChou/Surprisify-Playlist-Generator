@@ -47,15 +47,8 @@ $(document).ready(function() {
         var levels = $('#levels-btn').val();
         
         // Post level data
-        if (levels) {
-            req = $.ajax({
-                url : '/generate_playlist',
-                method : 'POST',
-                data : {level : levels}
-            }); 
-
-            window.location = "/success";
-
+        if (!levels) {
+            event.preventDefault();
         }
             
 

@@ -255,13 +255,12 @@ html, body {
 		text-align: center;
 		font-family: Source Sans Pro;
 		color: white;
-		align-items: center;
 		width: 100px;
-		line-height: 40px;
+		height: 40px;
+		border: none;
 		border-radius: 20px;
-		margin: 0 auto;
-		margin-bottom: 15px;
-		cursor: pointer;
+		outline: none;
+		-webkit-appearance: none;
 		opacity: 1;
 		transition: 0.2s;
 	}
@@ -454,6 +453,9 @@ html, body {
 		top: 20px;
 		opacity: 1;
 		transition: 0.1s;
+
+		outline: none;
+		-webkit-appearance: none;
 	}
 
 	#pl_submit:hover {
