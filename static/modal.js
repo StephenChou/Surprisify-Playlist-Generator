@@ -22,6 +22,18 @@ close_btn.addEventListener('click', ()=> {
 
 
 $(document).ready(function() {
+   $('#generate-btn').on('click', ()=> {
+        
+        var levels = $('#levels-btn').val();
+
+        if (!levels) {
+            event.preventDefault();
+        }
+            
+
+    });
+
+
     $('#pl_submit').on('click', ()=> {
         event.preventDefault();
         modal.classList.remove('modal-active');
@@ -33,24 +45,6 @@ $(document).ready(function() {
             type : 'POST',
             data : { name : name, desc : desc}
         });        
-
-    });
-
-    $('#generate-btn').on('click', ()=> {
-        
-        var levels = $('#levels-btn').val();
-
-        if (levels) {
-            req = $.ajax({
-                url : '/generate_playlist',
-                type : 'POST',
-                data : {level : levels}
-            }); 
-
-            window.location = "/success";
-
-        }
-            
 
     });
 

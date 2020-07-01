@@ -115,10 +115,13 @@ def generate_playlist():
         token = session.get('token')
 
         user_info = generate(token, level, pl_name, pl_desc)
+        user_playlist_id = str(user_info[1])
+        print(user_playlist_id)
+        session['user_pl_id'] = user_playlist_id
 
         return redirect(url_for('success'))
         # user_spotify_id = str(user_info[0])
-        # user_playlist_id = str(user_info[1])
+
         # user_first_name = str(user_info[2])
 
         # found_user = users.query.filter_by(spotify_id=user_spotify_id).first()
@@ -178,7 +181,9 @@ def user_list():
 
 @app.route('/success')
 def success():
-    return render_template('success.html', title='success')
+    playlist_id = session.get('user_pl_id')
+    print(playlist_id)
+    return render_template('success.html', title='success', pl_id=playlist_id)
 
 
 # Success landing page

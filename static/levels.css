@@ -259,13 +259,13 @@ html, body {
 		color: white;
 		align-items: center;
 		width: 100px;
-		line-height: 40px;
+		height: 40px;
+		border: none;
 		border-radius: 20px;
-		margin: 0 auto;
-		margin-bottom: 15px;
-		cursor: pointer;
 		opacity: 1;
 		transition: 0.2s;
+		outline: none;
+		-webkit-appearance: none;
 	}
 	
 	#generate-btn:hover {
@@ -411,6 +411,8 @@ html, body {
     text-decoration: none;
     display: inline-block;
     vertical-align: middle;
+    outline: none;
+    -webkit-appearance: none;
 
 
     }
@@ -455,6 +457,7 @@ html, body {
 		top: 20px;
 		opacity: 1;
 		transition: 0.1s;
+		-webkit-appearance: none;
 	}
 
 	#pl_submit:hover {
