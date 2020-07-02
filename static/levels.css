@@ -260,6 +260,9 @@ html, body {
 		border: none;
 		border-radius: 20px;
 		appearance: none;
+		outline: none;
+		-webkit-outline: none;
+		cursor: pointer;
 		-webkit-appearance: none;
 		opacity: 1;
 		transition: 0.2s;
