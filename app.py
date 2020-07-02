@@ -27,7 +27,7 @@ db.app = app
 
 class users(db.Model):
     spotify_id = db.Column(db.String(50), primary_key=True)
-    playlist_id = db.Column(db.String(25), unique=True, nullable=False)
+    playlist_id = db.Column(db.String(40), unique=True, nullable=False)
     first_name = db.Column(db.String(20), unique=False, nullable=True)
 
     def __init__(self, usr_id, pl_id, f_name):
