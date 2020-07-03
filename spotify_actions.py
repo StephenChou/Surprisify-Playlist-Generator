@@ -84,10 +84,15 @@ def get_obscure_artist(artist_id, levels, spotifyObject):
     if (levels == 1):
         return artist_id
 
-    tempid = spotifyObject.artist_related_artists(
-        artist_id)['artists'][rnd_artist]['id']
-    finalid = get_obscure_artist(tempid, levels - 1, spotifyObject)
-    return finalid
+    temp_id = artist_id
+    new_id = ''
+    while levels >= 1:
+        new_id = spotifyObject.artist_related_artists(
+            temp_id)['artists'][rnd_artist]['id']
+        temp_id = new_id
+        levels -= 1
+
+    return new_id
 
 
 def generate(token, levels, name, desc):
@@ -109,10 +114,10 @@ def generate(token, levels, name, desc):
     # Try and get obscure artists by going deep into related artists
     related_artist_ids = []
     for i in artist_ids:
-        id = get_obscure_artist(i, levels, spotifyObject)
-        while id not in related_artist_ids:
-            id = get_obscure_artist(i, levels, spotifyObject)
-            related_artist_ids.append(id)
+        artist_id = get_obscure_artist(i, levels, spotifyObject)
+        while artist_id in related_artist_ids:
+            artist_id = get_obscure_artist(i, levels, spotifyObject)
+        related_artist_ids.append(artist_id)
 
     # Get list of recommended songs and put ID's in a list
     tracks = spotifyObject.recommendations(
