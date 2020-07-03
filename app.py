@@ -81,7 +81,7 @@ def callback():
         token = req_token(code)
         session['token'] = token
 
-        return redirect(url_for('generate_playlist'))
+        return redirect('https://www.surprisify.me/generate_playlist')
 
 
 # Generate playlist view
