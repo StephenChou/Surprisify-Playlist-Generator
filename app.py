@@ -121,7 +121,7 @@ def generate_playlist():
             db.session.add(user)
             db.session.commit()
 
-        return redirect(url_for('success'))
+        return redirect('https://www.surprisify.me/success')
 
     else:
         if session.get('token'):
