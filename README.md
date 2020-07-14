@@ -1,4 +1,4 @@
-![Surprisify Logo](static/surprisifylogo.png)
+![Surprisify Logo](static/banner.png)
 # Surprisify-Playlist-Generator
 [Surprisify Playlist Generator](https://surprisify.me)
 
@@ -15,7 +15,7 @@ playlist will be, using recursion to dive into the user's top artists' related a
 
 The backend script was made in Python and uses Flask as a web framework. In addition to using requests to get authorization credentials from the user, [Spotipy](https://spotipy.readthedocs.io/en/2.13.0/) was used for the algorithm and playlist generation.
 
-### The algorithm:
+### The Algorithm:
 The algorithm is pretty basic and can be shown below:
 
 ```python
@@ -43,7 +43,7 @@ The method finds a related artist to one of the user's top streamed artists. Giv
 
 In order to enable the script to be interacted with by a user, the use of Flask as a microframework was implemented to connect the script to the frontend. Simple HTML and CSS styling with some JavaScript functions were created to make a user-friendly experience. 
 
-### The backend
+### The Backend
 
 Aside from the actual script, the only other backend code was the implementation of an SQL database using Flask SQLAlchemy, which is essentially an abstraction layer to SQL that enables the ability to interact with a databse through python. The code itself is pretty basic.
 
