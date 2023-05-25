@@ -16,6 +16,7 @@ app.secret_key = os.environ.get('SESSION_SECRET')
 app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
 # db config
+"""
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_REDIRECT_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -24,7 +25,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 db.app = app
 
+"""
 
+
+"""
 class users(db.Model):
     spotify_id = db.Column(db.String(50), primary_key=True)
     playlist_id = db.Column(db.String(40), unique=True, nullable=False)
@@ -34,6 +38,8 @@ class users(db.Model):
         self.spotify_id = usr_id
         self.playlist_id = pl_id
         self.first_name = f_name
+
+"""
 
 
 '''
@@ -110,6 +116,7 @@ def generate_playlist():
         # Store playlist ID in session
         session['user_pl_id'] = user_playlist_id
 
+        """
         found_user = users.query.filter_by(spotify_id=user_spotify_id).first()
 
         if found_user:
@@ -120,6 +127,8 @@ def generate_playlist():
             user = users(user_spotify_id, user_playlist_id, user_first_name)
             db.session.add(user)
             db.session.commit()
+
+        """
 
         return redirect('https://www.surprisify.me/success')
 
